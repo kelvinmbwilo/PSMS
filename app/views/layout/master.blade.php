@@ -5,23 +5,34 @@
     <title>AdminLTE | Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- font Awesome -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
-    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Morris chart -->
-    <link href="css/morris/morris.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/morris/morris.css') }}" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->
-    <link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
     <!-- Date Picker -->
-    <link href="css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/datepicker/datepicker3.css') }}" rel="stylesheet" type="text/css" />
     <!-- Daterange picker -->
-    <link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
-    <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
+
+
+    <link href="{{ asset('advanced-datatable/media/css/demo_page.css') }}" rel="stylesheet">
+    <link href="{{ asset('advanced-datatable/media/css/demo_table.css') }}" rel="stylesheet">
+    <link href="{{ asset('data-tables/DT_bootstrap.css') }}" rel="stylesheet">
+
+    <!-- jQuery 2.0.2 -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+    <script type="text/javascript" language="javascript" src="{{ asset('advanced-datatable/media/js/jquery.dataTables.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('data-tables/DT_bootstrap.js') }}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -312,6 +323,11 @@
                 </a>
             </li>
             <li>
+                <a href='{{ url("offenses") }}'>
+                    <i class="fa fa-th"></i> <span> Offenses Reported </span> <small class="badge pull-right bg-green">new</small>
+                </a>
+            </li>
+            <li>
                 <a href="pages/widgets.html">
                     <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
                 </a>
@@ -323,7 +339,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
+                    <li><a href=""><i class="fa fa-angle-double-right"></i> Morris</a></li>
                     <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
                     <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
                 </ul>
@@ -420,39 +436,35 @@
 <!-- add new calendar event modal -->
 
 
-<!-- jQuery 2.0.2 -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
 <!-- jQuery UI 1.10.3 -->
-<script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/jquery-ui-1.10.3.min.js') }}" type="text/javascript"></script>
 <!-- Bootstrap -->
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- Morris.js charts -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="js/plugins/morris/morris.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js') }}"></script>
 <!-- Sparkline -->
-<script src="js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js') }}" type="text/javascript"></script>
 <!-- jvectormap -->
-<script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
-<script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}" type="text/javascript"></script>
 <!-- jQuery Knob Chart -->
-<script src="js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/jqueryKnob/jquery.knob.js') }}" type="text/javascript"></script>
 <!-- daterangepicker -->
-<script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
 <!-- datepicker -->
-<script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
 <!-- iCheck -->
-<script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/iCheck/icheck.min.js') }}" type="text/javascript"></script>
+
 
 <!-- AdminLTE App -->
-<script src="js/AdminLTE/app.js" type="text/javascript"></script>
-
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="js/AdminLTE/dashboard.js" type="text/javascript"></script>
+<script src="{{ asset('js/AdminLTE/app.js') }}" type="text/javascript"></script>
 
 <!-- AdminLTE for demo purposes -->
-<script src="js/AdminLTE/demo.js" type="text/javascript"></script>
+<script src="{{ asset('js/AdminLTE/demo.js') }}" type="text/javascript"></script>
 
 </body>
 </html>

@@ -34,3 +34,11 @@ Route::resource('dashboard' , 'DashboardController');
 //*********************DataView************************/
 //********************************************************/
 Route::get('dataview', array('uses'=>'DataViewController@index')); //display policedata
+
+
+
+//*******************************************************//
+//********************Offenses***************************//
+//*******************************************************//
+Route::get('offenses', array('uses' => 'OffenseController@index'));
+Route::get('offenses/add', array('uses' => 'OffenseController@store'));
