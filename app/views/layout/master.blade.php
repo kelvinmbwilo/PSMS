@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE | Dashboard</title>
+    <title>PSMS</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -46,7 +46,7 @@
 <header class="header">
 <a href="index.html" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    AdminLTE
+    PSMS
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">
@@ -251,14 +251,14 @@
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="glyphicon glyphicon-user"></i>
-        <span>Jane Doe <i class="caret"></i></span>
+        <span>Mwita Marwa<i class="caret"></i></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header bg-light-blue">
             <img src="img/avatar3.png" class="img-circle" alt="User Image" />
             <p>
-                Jane Doe - Web Developer
+               Mwita Marwa - Bagamoyo Road
                 <small>Member since Nov. 2012</small>
             </p>
         </li>
@@ -300,7 +300,7 @@
                 <img src="img/avatar3.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Hello, Jane</p>
+                <p>Hello, Marwa</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -319,7 +319,7 @@
         <ul class="sidebar-menu">
             <li class="active">
                 <a href="index.html">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <i class="fa fa-dashboard"></i> <span>Home</span>
                 </a>
             </li>
             <li>

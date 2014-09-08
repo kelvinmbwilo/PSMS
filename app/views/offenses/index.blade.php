@@ -24,7 +24,7 @@
                                 <th>Driver Name</th>
                                 <th>Driver Adress</th>
                                 <th>Offense</th>
-                                <th>Offense type</th>
+                                <th>Part</th>
                                 <th>Amount</th>
                                 <th>License No</th>
                                 <th>Reg No</th>
@@ -37,7 +37,7 @@
                                 <td>{{ $offense->id }}</td>
                                 <td> @if($offense->licence){{$offense->licence->name}} @endif</td>
                                 <td> @if($offense->licence){{$offense->licence->address}} @endif</td>
-                                <td>{{$offense->offence}}</td>
+                                <td class="col-lg-3">{{$offense->offence}}</td>
                                 <td>{{$offense->commit}}</td>
                                 <td>{{$offense->amount}}</td>
                                 <td>{{$offense->license}}</td>
