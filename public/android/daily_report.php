@@ -43,7 +43,7 @@
     //Select the Database
     mysql_select_db("psms",$db);
  
-    $result = mysql_query("select id,nature,amount
+    $result = mysql_query("select id,nature,amount,relating
 	                       from psms_offence", $db);  
  
  /* If you want to process the returned xml rather than send it

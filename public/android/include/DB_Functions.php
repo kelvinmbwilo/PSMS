@@ -29,32 +29,37 @@ public function random_string()
     shuffle($temp_array);
     return implode('', $temp_array);
 }
-/**
-public function forgotPassword($forgotpassword, $newpassword, $salt){
-  $result = mysql_query("UPDATE `users` SET `encrypted_password` = '$newpassword',`salt` = '$salt'
-              WHERE `email` = '$forgotpassword'");
-if ($result) {
-return true;
-}
-else
-{
-return false;
-}
-}
 
+public function forgotPassword($rankNo, $newpassword){
+  $result = mysql_query("UPDATE `psms_users` SET `password` = '$newpassword'
+              WHERE `rankNo` = '$rankNo'");
+			  
+ $result2 = mysql_query("select * from psms_users where rankNo = '".$rankNo."'") or die(mysql_error());
+        // check for result
+        $no_of_rows = mysql_num_rows($result2);
+  if ($no_of_rows > 0) {
+      return true;
+      } else
+     {
+	 return false;
+      }
+}
+   /*
      * Adding new user to mysql database
      * returns user details
      */
-    public function storeOffence($license, $plateNumber, $offence, $commit) {
+    public function storeOffence($license, $plateNumber, $offence, $commit, $rankNo, $amount) {
        
-        $result = mysql_query("INSERT INTO psms_data( license, plateNumber, offence, commit,created_at) VALUES('$license', '$plateNumber', '$offence','$commit',NOW())");
+        $result = mysql_query("INSERT INTO psms_data( license, plateNumber, offence, commit,amount, created_at, rankNo) VALUES('$license', '$plateNumber', '$offence', '$commit', '$amount', NOW(),'$rankNo')");
         // check for successful store
         if ($result) {
             // get user details
             $uid = mysql_insert_id(); // last inserted id
             $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
             // return user details
-            return mysql_fetch_array($result);
+           
+			$res=mysql_fetch_array($result);
+			return $res;
         } else {
             return false;
         }
@@ -79,6 +84,26 @@ return false;
                 return $result;
             }
        
+        } else {
+            // user not found
+            return false;
+        }
+    }
+	
+	  /**
+     * Verifies user by rankNo and password
+     */
+    public function getUserToChangePassword($password) {
+
+	
+        $result = mysql_query("select * from psms_users where password = '".$password."'") or die(mysql_error());
+        // check for result
+        $no_of_rows = mysql_num_rows($result);
+        if ($no_of_rows > 0) {
+		  
+            $result = mysql_fetch_array($result);
+			  return $result;
+         
         } else {
             // user not found
             return false;
@@ -124,28 +149,53 @@ return false;
     }
 	
 	/**
-     * getting history of offence of a driver by licenceNo
+     * getting history of offence of a driver by license number
      */
     public function getHistory($licence) {
-        $result = mysql_query("select offence from psms_data");
+        $result = mysql_query("select offence,created_at from psms_data where license = '".$licence."' ORDER BY created_at DESC") or die(mysql_error());
+		$array = array();
 		
-		//where license = '".$licence."'") or die(mysql_error());
         // check for result
         $no_of_rows = mysql_num_rows($result);
 		
 		
         if ($no_of_rows > 0) {
-		   
-            $result = mysql_fetch_array($result);
+		   while($row = mysql_fetch_assoc($result)){
+             $array[] = $row;
+              
+
+            }
 			
-			
-        foreach($result as $res){
-               print $res." ";
-		     //  return $result;
-          }
+           // $result = mysql_fetch_array($result);
+	
+		   return $array;
         } else {
             // offence not found
             return false;
+        }
+    }
+	
+	/**
+     * getting history of offence of a driver by license number
+     */
+    public function getNumberOfOffence($licence) {
+        $result = mysql_query("select offence,created_at from psms_data where license = '".$licence."'") or die(mysql_error());
+		
+		
+        // check for result
+        $no_of_rows = mysql_num_rows($result);
+		
+		
+        if ($no_of_rows > 0) {
+		 
+            $result =$no_of_rows;
+	           if ($no_of_rows > 3) {
+		        return 3;
+				}
+				return $result;
+        } else {
+            // offence not found
+            return 0;
         }
     }
  /**
@@ -218,8 +268,8 @@ public function validEmail($email)
  /**
      * Check user is existed or not
      */
-    public function isUserExisted($email) {
-        $result = mysql_query("SELECT email from psms_users WHERE email = '$email'");
+    public function isUserExisted($pass) {
+        $result = mysql_query("SELECT * from psms_users WHERE email = '$pass'");
         $no_of_rows = mysql_num_rows($result);
         if ($no_of_rows > 0) {
             // user existed

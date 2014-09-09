@@ -18,7 +18,7 @@ class Data extends Eloquent {
     }
 
     public function licence(){
-        return $this->hasMany('Licence', 'plateNo', 'id');
+        return $this->belongsTo('Licence', 'license', 'licenceNo');
     }
 
     public function offence(){
