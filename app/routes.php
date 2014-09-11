@@ -41,4 +41,5 @@ Route::get('dataview', array('uses'=>'DataViewController@index')); //display pol
 //********************Offenses***************************//
 //*******************************************************//
 Route::get('offenses', array('uses' => 'OffenseController@index'));
-Route::get('offenses/add', array('uses' => 'OffenseController@store'));
+Route::post('offenses/add', array('uses' => 'OffenseController@store'));
+Route::get('offenses/add', array('uses' => 'OffenseController@addOffense'));

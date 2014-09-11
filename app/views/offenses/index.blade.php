@@ -9,7 +9,7 @@
             <section class="panel">
                 <header class="panel-heading">
         Offenses
-                    <button data-toggle="modal" data-target="#myModal" class="btn btn-success pull-right" }}>
+                    <a class="btn btn-success pull-right" href="{{ url('offenses/add') }}">New Offense</a>
                     New Offense
                     </button>
 
@@ -55,21 +55,6 @@
     </div>
     <!-- page end-->
 </section>
-
-<div class="modal fade" id="myModal" style="padding-top: 10%" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-@include('offenses.addOffense')
-        </div>
-        </div>
-    </div>
-</div>
-
 <!--script for this page-->
 
 <script>

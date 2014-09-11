@@ -37,6 +37,13 @@ class OffenseController extends \BaseController {
 		//
 	}
 
+    public function addOffense()
+    {
+        $offenseList =  Offence::all();
+        $offenseList -> toarray();
+        return View::make('offenses.addOffense' , compact('offenseList'));
+    }
+
 
 	/**
 	 * Display the specified resource.

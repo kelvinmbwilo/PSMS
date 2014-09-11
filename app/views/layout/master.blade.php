@@ -318,7 +318,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="active">
-                <a href="index.html">
+                <a href='{{ url("dashboard") }}'>
                     <i class="fa fa-dashboard"></i> <span>Home</span>
                 </a>
             </li>
@@ -329,18 +329,18 @@
             </li>
             <li>
                 <a href="pages/widgets.html">
-                    <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
+                    <i class="fa fa-th"></i> <span>Officers</span>
                 </a>
             </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-bar-chart-o"></i>
-                    <span>Charts</span>
+                    <span>Data</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-angle-double-right"></i> Morris</a></li>
-                    <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
+                    <li><a href=""><i class="fa fa-angle-double-right"></i> Licenses </a></li>
+                    <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i>Car Informations</a></li>
                     <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
                 </ul>
             </li>
