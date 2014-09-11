@@ -37,6 +37,26 @@ Route::get('dataview', array('uses'=>'DataViewController@index')); //display pol
 
 
 
+//********************************************************/
+//*********************User************************/
+//********************************************************/
+Route::get('user', array('uses'=>'UserController@index')); //display list of users
+Route::get('user/add', array('uses'=>'UserController@create')); //add users
+Route::post('user/add', array('uses'=>'UserController@store')); //processing added users
+Route::get('user/delete/{id}', array('uses'=>'UserController@destroy')); //add users
+Route::get('user/edit/{id}', array('uses'=>'UserController@update')); //edit users
+Route::post('user/edit/{id}', array('uses'=>'UserController@edit')); //process edited users
+Route::get('userindex', array('uses'=>'UserController@index'));//displaying messages
+
+
+
+
+//********************************************************/
+//*********************Login************************/
+//********************************************************/
+Route::get('login', array('uses'=>'LoginController@index')); //display login form
+Route::post('login', array('uses'=>'LoginController@login')); //process login form
+Route::get('logout', array('uses'=>'LoginController@logout')); //process logout functionality
 //*******************************************************//
 //********************Offenses***************************//
 //*******************************************************//

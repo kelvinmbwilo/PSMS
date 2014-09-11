@@ -23,17 +23,6 @@
     <!-- Theme style -->
     <link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 
-
-    <link href="{{ asset('advanced-datatable/media/css/demo_page.css') }}" rel="stylesheet">
-    <link href="{{ asset('advanced-datatable/media/css/demo_table.css') }}" rel="stylesheet">
-    <link href="{{ asset('data-tables/DT_bootstrap.css') }}" rel="stylesheet">
-
-    <!-- jQuery 2.0.2 -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-
-    <script type="text/javascript" language="javascript" src="{{ asset('advanced-datatable/media/js/jquery.dataTables.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('data-tables/DT_bootstrap.js') }}"></script>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -251,15 +240,15 @@
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="glyphicon glyphicon-user"></i>
-        <span>Mwita Marwa<i class="caret"></i></span>
+        <span>{{ Auth::user()->fullName}}<i class="caret"></i></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header bg-light-blue">
             <img src="img/avatar3.png" class="img-circle" alt="User Image" />
             <p>
-               Mwita Marwa - Bagamoyo Road
-                <small>Member since Nov. 2012</small>
+                {{ Auth::user()->fullName}} - Rank No{{ Auth::user()->rankNo}}
+                <small>Member since {{ Auth::user()->created_at}}</small>
             </p>
         </li>
         <!-- Menu Body -->
@@ -280,7 +269,7 @@
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="{{ URL::to('logout') }}" class="btn btn-default btn-flat">Sign out</a>
             </div>
         </li>
     </ul>
@@ -391,6 +380,12 @@
                     <small class="badge pull-right bg-yellow">12</small>
                 </a>
             </li>
+            <li>
+                <a  href="{{ url('user') }}">
+                    <i class="fa fa-user"></i>
+                    <span>User</span>
+                </a>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-folder"></i> <span>Examples</span>
@@ -436,35 +431,41 @@
 <!-- add new calendar event modal -->
 
 
-
+<!-- jQuery 2.0.2 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <!-- jQuery UI 1.10.3 -->
-<script src="{{ asset('js/jquery-ui-1.10.3.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/jquery-ui-1.10.3.min.js" type="text/javascript')}}"></script>
 <!-- Bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
 <!-- Morris.js charts -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js') }}"></script>
+<script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')}}"></script>
+<script src="{{ asset('js/plugins/morris/morris.min.js')}}" type="text/javascript"></script>
 <!-- Sparkline -->
-<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>
 <!-- jvectormap -->
-<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}" type="text/javascript"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{ asset('js/plugins/jqueryKnob/jquery.knob.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/jqueryKnob/jquery.knob.js')}}" type="text/javascript"></script>
 <!-- daterangepicker -->
-<script src="{{ asset('js/plugins/daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/daterangepicker/daterangepicker.js')}}" type="text/javascript"></script>
 <!-- datepicker -->
-<script src="{{ asset('js/plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript"></script>
+<script src="js/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}" type="text/javascript"></script>
 <!-- iCheck -->
-<script src="{{ asset('js/plugins/iCheck/icheck.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/plugins/iCheck/icheck.min.js')}}" type="text/javascript"></script>
 
 
 <!-- AdminLTE App -->
-<script src="{{ asset('js/AdminLTE/app.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset('js/AdminLTE/dashboard.js')}}" type="text/javascript"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('js/AdminLTE/demo.js') }}" type="text/javascript"></script>
+
 
 </body>
 </html>
