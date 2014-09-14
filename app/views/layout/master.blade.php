@@ -23,6 +23,19 @@
     <!-- Theme style -->
     <link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 
+    <link href="{{ asset('advanced-datatable/media/css/demo_page.css') }}" rel="stylesheet"/>
+
+    <link href="{{ asset('advanced-datatable/media/css/demo_table.css') }}" rel="stylesheet"/>
+
+    <link href="{{ asset('data-tables/DT_bootstrap.css') }}" rel="stylesheet"/>
+
+    <!-- JQuery 2.0.2 -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+
+    <script type="text/javascript" language="JavaScript" src="{{ asset('advanced-datatable/media/js/jquery.dataTables.js') }}"></script>
+    <script type="text/javascript" language="JavaScript" src="{{ asset('data-tables/DT_bootstrap.js') }}"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -240,15 +253,15 @@
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="glyphicon glyphicon-user"></i>
-        <span>{{ Auth::user()->fullName}}<i class="caret"></i></span>
+        <span>{{{ Auth::user()->fullName or '' }}}<i class="caret"></i></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header bg-light-blue">
             <img src="img/avatar3.png" class="img-circle" alt="User Image" />
             <p>
-                {{ Auth::user()->fullName}} - Rank No{{ Auth::user()->rankNo}}
-                <small>Member since {{ Auth::user()->created_at}}</small>
+                {{{ Auth::user()->fullName or ''}}} - Rank No{{{ Auth::user()->rankNo or ''}}}
+                <small>Member since {{{ Auth::user()->created_at or ''}}}</small>
             </p>
         </li>
         <!-- Menu Body -->
@@ -431,8 +444,6 @@
 <!-- add new calendar event modal -->
 
 
-<!-- jQuery 2.0.2 -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <!-- jQuery UI 1.10.3 -->
 <script src="{{ asset('js/jquery-ui-1.10.3.min.js" type="text/javascript')}}"></script>
 <!-- Bootstrap -->
@@ -460,8 +471,6 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('js/AdminLTE/app.js')}}" type="text/javascript"></script>
 
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('js/AdminLTE/dashboard.js')}}" type="text/javascript"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('js/AdminLTE/demo.js') }}" type="text/javascript"></script>

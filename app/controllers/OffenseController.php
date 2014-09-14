@@ -26,16 +26,33 @@ class OffenseController extends \BaseController {
 		//
 	}
 
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+    /**
+     * Store a newly created offense
+     * @return mixed
+     */
+    public function store()
 	{
-		//
-	}
+       $ingreedients =  Array();
+       $ingreedients = Input::get('ingredients');
+        for ($i=0; $i<sizeof($ingreedients); $i++){
+
+            $val = $ingreedients[$i];
+            $instanse = Offence::find($val);
+
+            Data::create(array(
+                'offence' => $instanse->nature,
+                'plateNumber' => Input::get('plateno'),
+                'rankNo' => Auth::user()->rankNo,
+                'license' => Input::get('license'),
+                'commit' => Input::get('commit'),
+                'amount' => $instanse->amount
+            ));
+
+        }
+
+        return Redirect::To('offenses');
+
+    }
 
     public function addOffense()
     {

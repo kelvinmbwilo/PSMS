@@ -57,6 +57,8 @@ Route::get('userindex', array('uses'=>'UserController@index'));//displaying mess
 Route::get('login', array('uses'=>'LoginController@index')); //display login form
 Route::post('login', array('uses'=>'LoginController@login')); //process login form
 Route::get('logout', array('uses'=>'LoginController@logout')); //process logout functionality
+
+
 //*******************************************************//
 //********************Offenses***************************//
 //*******************************************************//

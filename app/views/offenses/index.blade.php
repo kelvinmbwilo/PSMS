@@ -2,7 +2,7 @@
 @section('contents')
 @include('offenses.delete')
     <!--main content start-->
-<section class="wrapper" xmlns="http://www.w3.org/1999/html">
+<section class="wrapper">
     <!-- page start-->
     <div class="row">
         <div class="col-lg-12">
