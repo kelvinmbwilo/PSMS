@@ -34,6 +34,11 @@ class OffenseController extends \BaseController {
 	{
        $ingreedients =  Array();
        $ingreedients = Input::get('ingredients');
+        if (count($ingreedients) === 0){
+            return Redirect::back()->with('message', 'Offense Not Selected!!');
+        }
+        else{
+
         for ($i=0; $i<sizeof($ingreedients); $i++){
 
             $val = $ingreedients[$i];
@@ -51,6 +56,8 @@ class OffenseController extends \BaseController {
         }
 
         return Redirect::To('offenses');
+
+        }
 
     }
 

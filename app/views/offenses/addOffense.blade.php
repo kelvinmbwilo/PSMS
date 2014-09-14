@@ -12,7 +12,11 @@
 <section class="panel">
     <header class="panel-heading">
         Add Offense
-
+        @if ($alert = Session::get('alert-success'))
+        <div class="panel-heading">
+            {{ $alert }}
+        </div>
+        @endif
     </header>
     <div class="panel-body">
         <span id="responce" style="opacity: 0; color: "> Successful.. </span>
@@ -46,7 +50,7 @@
                 <div class="form-group col-lg-6">
 
                     <input type="radio" class="radio" name="commit" value="PartA"> Court
-                    <input type="radio" class="radio" name="commit" value="PartB"> Gulty
+                    <input checked type="radio" class="radio" name="commit" value="PartB"> Gulty
 
                 </div>
 
@@ -77,10 +81,14 @@
                     @endforeach
 
                     <ul class="media-list">
+                        <li>
+                            <input type="hidden" name="0" value="0" />
+                        </li>
 
                     </ul>
 
                     <select onchange="selectIngredient(this);" class="form-control" required="required">
+                        <option value="0" hidden="hidden"> Select Offenses </option>
                         <optgroup label="Part A">
                             @for ($i = 0; $i < count($partA); $i++)
                                 <option value="{{ $partA[$i]->id }}" class="col-lg-2 margin">{{ $partA[$i]->nature }}</option>
