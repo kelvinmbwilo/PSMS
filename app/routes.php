@@ -63,5 +63,7 @@ Route::get('logout', array('uses'=>'LoginController@logout')); //process logout 
 //********************Offenses***************************//
 //*******************************************************//
 Route::get('offenses', array('uses' => 'OffenseController@index'));
+Route::get('vehicle', array('uses' => 'OffenseController@vehicle'));
+Route::get('bicycle', array('uses' => 'OffenseController@bicycle'));
 Route::post('offenses/add', array('uses' => 'OffenseController@store'));
 Route::get('offenses/add', array('uses' => 'OffenseController@addOffense'));

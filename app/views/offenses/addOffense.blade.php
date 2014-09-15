@@ -45,8 +45,6 @@
                     <input type="text" required="required" class="form-control"name="plateno" id="plateno" placeholder="Enter Plate Number">
                 </div>
 
-
-
                 <div class="form-group col-lg-6">
 
                     <input type="radio" class="radio" name="commit" value="PartA"> Court

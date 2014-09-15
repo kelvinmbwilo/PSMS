@@ -15,6 +15,36 @@ class OffenseController extends \BaseController {
 
 	}
 
+    /**
+     * @return mixed
+     */
+    public function bicycle(){
+        $offenses = array();
+        $off = Data::all();
+        $off->toarray();
+
+        foreach ($off as $moff){
+            if($moff->Hasoffence->relating === 'bicycle/tricycle'){
+                $offenses[] = $moff;
+            }
+        }
+        return View::make('offenses.index', compact('offenses'));
+    }
+
+
+
+    public function vehicle(){
+        $offenses = array();
+        $off = Data::all();
+        $off->toarray();
+        foreach ($off as $moff){
+            if($moff->Hasoffence->relating === 'motor vehicle'){
+                $offenses[] = $moff;
+            }
+        }
+        return View::make('offenses.index', compact('offenses'));
+    }
+
 
 	/**
 	 * Show the form for creating a new resource.
