@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+@if(Auth::guest())
+{{Redirect::to("login")}}
+@else
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE | Dashboard</title>
+    <title>Police Station Management System-PSMS</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -35,9 +38,10 @@
 <header class="header">
 <a href="index.html" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    AdminLTE
+    PSMS
 </a>
-<!-- Header Navbar: style can be found in header.less -->
+<!-- Header Navbar: style can be foun
+d in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">
 <!-- Sidebar toggle button-->
 <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -77,7 +81,7 @@
                             <img src="img/avatar2.png" class="img-circle" alt="user image"/>
                         </div>
                         <h4>
-                            AdminLTE Design Team
+                           PSMS Design Team
                             <small><i class="fa fa-clock-o"></i> 2 hours</small>
                         </h4>
                         <p>Why not buy a new awesome theme?</p>
@@ -463,3 +467,4 @@
 
 </body>
 </html>
+@endif
