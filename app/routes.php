@@ -22,7 +22,10 @@ Route::get('dashboard', function()
 });
 
 
-
+Route::get('statistics', function()
+{
+    return View::make('statistics');
+});
 
 
 
