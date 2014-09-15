@@ -57,3 +57,11 @@ Route::get('userindex', array('uses'=>'UserController@index'));//displaying mess
 Route::get('login', array('uses'=>'LoginController@index')); //display login form
 Route::post('login', array('uses'=>'LoginController@login')); //process login form
 Route::get('logout', array('uses'=>'LoginController@logout')); //process logout functionality
+
+
+//*******************************************************//
+//********************Offenses***************************//
+//*******************************************************//
+Route::get('offenses', array('uses' => 'OffenseController@index'));
+Route::post('offenses/add', array('uses' => 'OffenseController@store'));
+Route::get('offenses/add', array('uses' => 'OffenseController@addOffense'));
