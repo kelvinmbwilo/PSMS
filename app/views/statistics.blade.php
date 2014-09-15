@@ -55,7 +55,14 @@
                             $totalCarOffenses++;
                         }
                     }
-                    $percent = $totalCarOffenses/count($totalOffenses)*100;
+                    $devide = 1;
+                    if(count($totalOffenses) === 0){
+                        $devide = 1;
+                    }
+                    else{
+                        $devide = count($totalOffenses);
+                    }
+                    $percent = $totalCarOffenses/$devide*100;
                     $carpercentage = $percent;
                     ?>
                     {{ $percent }} <sup style="font-size: 20px">%</sup>
@@ -80,7 +87,12 @@
             <div class="inner">
                 <h3>
                     <?php
-                    $bcp = 100 - $carpercentage;
+                    if($totalOffenses === 0){
+                        $bcp = 0;
+                    }
+                    else{
+                        $bcp = 100 - $carpercentage;
+                    }
                     ?>
                     {{ $bcp }} <sup style="font-size: 20px">%</sup>
                 </h3>
