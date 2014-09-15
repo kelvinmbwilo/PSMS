@@ -1,14 +1,22 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: macbook
+ * Date: 9/14/14
+ * Time: 5:59 PM
+ */
+?>
 @extends('layout.master')
 @section('contents')
 @include('offenses.delete')
-    <!--main content start-->
+<!--main content start-->
 <section class="wrapper">
     <!-- page start-->
     <div class="row">
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-        Offenses
+                    Vehicle Offenses
                     <a class="btn btn-success pull-right" href="{{ url('offenses/add') }}">New Offense</a>
                     New Offense
                     </button>
@@ -32,7 +40,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                    @foreach($offenses as $offense)
+                            @foreach($offenses as $offense)
                             <tr>
                                 <td>{{ $offense->id }}</td>
                                 <td> @if($offense->licence){{$offense->licence->name}} @endif</td>
@@ -44,7 +52,7 @@
                                 <td>{{$offense->plateNumber}}</td>
                                 <td class="numeric">{{$offense->created_at}}</td>
                             </tr>
-@endforeach
+                            @endforeach
                             </tbody>
                         </table>
                     </section>
@@ -58,10 +66,10 @@
 <!--script for this page-->
 
 <script>
-$(function(){
-    $("#dynamic-table").dataTable();
-    $('.form').on('submit' , function(e){
-        var that = $(this),
+    $(function(){
+        $("#dynamic-table").dataTable();
+        $('.form').on('submit' , function(e){
+            var that = $(this),
                 url = that.attr('action'),
                 type = that.attr('method'),
                 data = {};
@@ -79,19 +87,19 @@ $(function(){
                 type:type,
                 data:data,
                 success:function(response){
-            if(response == 'success'){
-                $('#response').css({opacity:1});
+                    if(response == 'success'){
+                        $('#response').css({opacity:1});
                         $('#dynamic-table').load('stakeholder.stakeholders.blade.php');
                         window.location.reload();
                         //$('#response').delay(770).animate({opacity:0},1000);
                         //$('#update').load('update_assets.php');
                         //$('#edit_table').find('.newtr').remove();
                     }
-        }
+                }
             });
 
         });
-});
+    });
 </script>
 
 @stop
