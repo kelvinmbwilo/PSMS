@@ -31,7 +31,7 @@ SAIDA NURUDINI MARTHA SHAKA ISAYAH ZACHARIA
             <div class="icon">
                 <i class="ion ion-android-search"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href='{{ url("offenses") }}' class="small-box-footer">
                 More info <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -66,7 +66,7 @@ SAIDA NURUDINI MARTHA SHAKA ISAYAH ZACHARIA
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href='{{ url("vehicle") }}' class="small-box-footer">
                 More info <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -90,7 +90,7 @@ SAIDA NURUDINI MARTHA SHAKA ISAYAH ZACHARIA
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href='{{ url("bicycle") }}' class="small-box-footer">
                 More info <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>
