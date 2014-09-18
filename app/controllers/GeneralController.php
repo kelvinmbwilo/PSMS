@@ -13,7 +13,7 @@ class GeneralController extends \BaseController {
     }
 
     public function processQuery($offencequery){
-//        $quer = parent::processRegion($offencequery,Input::get('region'),"");
+        $quer = parent::processRegion($offencequery,Input::get('region'),"");
         $query = parent::processDistrict($quer[0],Input::get('district'),$quer[1]);
 //        $query1 = parent::processOffence($query[0],Input::get('offence'),$query[2]);
 //        $query2 = parent::processSection($query1[0],Input::get('section'),$query1[2]);
@@ -62,7 +62,7 @@ class GeneralController extends \BaseController {
                 $que = $query[0]->whereIn('license', Licence::where('gender',$key1)->get()->lists('licenceNo')+array('0'));
                 break;
             case "Regions":
-                $que = $query[0]->whereIn('region_id', $key1);
+                $que = $query[0]->where('region_id', $key1);
                 break;
             case "Districts":
                 $que = $query[0]->where('district_id', $key1);
@@ -85,8 +85,6 @@ class GeneralController extends \BaseController {
             case "Licence Status":
                 $que = $query[0]->whereIn('license', Licence::where('status',$key1)->get()->lists('licenceNo')+array('0'));
                 break;
-
-
         }
         return $que;
     }
@@ -110,7 +108,7 @@ class GeneralController extends \BaseController {
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column[$value1][] = $que->count();
                     }
-//                    $title = Input::get('vertical')." ". $query[2]." ".Input::get('year');;
+                    $title = Input::get('vertical')." ". $query[1]." ".Input::get('year');;
                 }
             }
         }
@@ -122,13 +120,12 @@ class GeneralController extends \BaseController {
                 $to = $value."-12-31";
                 if(isset($columntype)){
                     foreach($columntype as $key1=>$value1){
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column[$value1][] = $que->count();
                     }
-                    $title = Input::get('vertical')." ". $query[2]." ".Input::get('start')." - ".Input::get('end');
+                    $title = Input::get('vertical')." ". $query[1]." ".Input::get('start')." - ".Input::get('end');
                 }
             }
         }
@@ -162,13 +159,12 @@ class GeneralController extends \BaseController {
                 $end = date("Y",$timerange1)."-01-01";
                 if(isset($columntype)){
                     foreach($columntype as $key1=>$value1){
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
-                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('birth_date',array($end,$start));
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereIn('license', Licence::whereBetween('dob',array($end,$start))->get()->lists('licenceNo')+array('0'));
                         $column[$value1][] = $que->count();
                     }
-                    $title = Input::get('vertical')." Age Range ". $query[2];
+                    $title = Input::get('vertical')." Age Range ". $query[1];
                 }
                 $k=$i;
             }
@@ -188,7 +184,15 @@ class GeneralController extends \BaseController {
             </tr>
             <?php foreach($column as $keys => $cols){ ?>
                 <tr>
-                    <td><?php echo $keys ?></td>
+                    <td><?php
+                        if(Input::get('show') == 'Regions'){
+                        echo Region::find($keys)->region;
+                        }elseif(Input::get('show') == 'Districts' ){
+                        echo District::find($keys)->district;
+                        }else{
+                        echo $keys;
+                        }
+                    ?></td>
                     <?php
                     foreach($cols as $colsval){
                         echo "<td>$colsval</td>";
@@ -207,12 +211,6 @@ class GeneralController extends \BaseController {
         $row = "categories: [";
         $column = "";
         $columntype = $this->generateArray(Input::get("show"));
-        if(Input::get("vertical") == "Patients"){
-            $pat = true;
-        }elseif(Input::get("vertical") == "Visits"){
-            $vis = true;
-        }
-
 
         if(Input::get("horizontal") == "Year"){
             $row1 = array("01"=>"jan","02"=>"feb","03"=>"mar","04"=>"apr","05"=>"may","06"=>"jun","07"=>"jul","08"=>"aug","09"=>"sep","10"=>"oct","11"=>"nov","12"=>"dec");
@@ -229,9 +227,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = Input::get('year')."-".$key."-01";
                         $to = Input::get('year')."-".$key."-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $i++;
@@ -240,7 +237,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Years"){
             $row1 = range(Input::get('start'),Input::get('end'));
@@ -257,9 +254,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = $value."-01-01";
                         $to = $value."-12-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $i++;
@@ -268,7 +264,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Age Range"){
             //setting the limits
@@ -305,10 +301,9 @@ class GeneralController extends \BaseController {
                         $time1 = $i*365*24*3600;
                         $timerange1 = strtotime($today) - $time1;
                         $end = date("Y",$timerange1)."-01-01";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
-                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('birth_date',array($end,$start));
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereIn('license', Licence::whereBetween('dob',array($end,$start))->get()->lists('licenceNo')+array('0'));
                         $column .= ($i < $limit)?$que->count().",":$que->count();
                         $k=$i;
                     }
@@ -317,7 +312,7 @@ class GeneralController extends \BaseController {
                 }
             }
 
-            $title = Input::get('vertical')." Age Range ". $query[2]." ";
+            $title = Input::get('vertical')." Age Range ". $query[1]." ";
 
         }
 
@@ -370,12 +365,6 @@ class GeneralController extends \BaseController {
         $row = "categories: [";
         $column = "";
         $columntype = $this->generateArray(Input::get("show"));
-        if(Input::get("vertical") == "Patients"){
-            $pat = true;
-        }elseif(Input::get("vertical") == "Visits"){
-            $vis = true;
-        }
-
 
         if(Input::get("horizontal") == "Year"){
             $row1 = array("01"=>"jan","02"=>"feb","03"=>"mar","04"=>"apr","05"=>"may","06"=>"jun","07"=>"jul","08"=>"aug","09"=>"sep","10"=>"oct","11"=>"nov","12"=>"dec");
@@ -392,9 +381,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = Input::get('year')."-".$key."-01";
                         $to = Input::get('year')."-".$key."-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $i++;
@@ -403,7 +391,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Years"){
             $row1 = range(Input::get('start'),Input::get('end'));
@@ -420,9 +408,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = $value."-01-01";
                         $to = $value."-12-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $i++;
@@ -431,7 +418,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Age Range"){
             //setting the limits
@@ -468,10 +455,9 @@ class GeneralController extends \BaseController {
                         $time1 = $i*365*24*3600;
                         $timerange1 = strtotime($today) - $time1;
                         $end = date("Y",$timerange1)."-01-01";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
-                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('birth_date',array($end,$start));
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereIn('license', Licence::whereBetween('dob',array($end,$start))->get()->lists('licenceNo')+array('0'));
                         $column .= ($i < $limit)?$que->count().",":$que->count();
                         $k=$i;
                     }
@@ -480,7 +466,7 @@ class GeneralController extends \BaseController {
                 }
             }
 
-            $title = Input::get('vertical')." Age Range ". $query[2]." ";
+            $title = Input::get('vertical')." Age Range ". $query[1]." ";
 
         }
 
@@ -490,7 +476,7 @@ class GeneralController extends \BaseController {
             $(function () {
                 $('#chartarea').highcharts({
                     chart: {
-                        type: 'bar'
+                        type: 'column'
                     },
                     title: {
                         text: '<?php echo $title ?>'
@@ -557,9 +543,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = Input::get('year')."-".$key."-01";
                         $to = Input::get('year')."-".$key."-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $column1 .= ($i < count($row1))?$que->count().",":$que->count();
@@ -570,7 +555,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Years"){
             $row1 = range(Input::get('start'),Input::get('end'));
@@ -588,9 +573,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = $value."-01-01";
                         $to = $value."-12-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $column1 .= ($i < count($row1))?$que->count().",":$que->count();
@@ -601,7 +585,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Age Range"){
             //setting the limits
@@ -639,10 +623,9 @@ class GeneralController extends \BaseController {
                         $time1 = $i*365*24*3600;
                         $timerange1 = strtotime($today) - $time1;
                         $end = date("Y",$timerange1)."-01-01";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
-                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('birth_date',array($end,$start));
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereIn('license', Licence::whereBetween('dob',array($end,$start))->get()->lists('licenceNo')+array('0'));
                         $column .= ($i < $limit)?$que->count().",":$que->count();
                         $column1 .= ($i < $limit)?$que->count().",":$que->count();
                         $k=$i;
@@ -654,7 +637,7 @@ class GeneralController extends \BaseController {
             }
 
 
-            $title = Input::get('vertical')." Age Range ". $query[2]." ";
+            $title = Input::get('vertical')." Age Range ". $query[1]." ";
 
         }
 
@@ -726,9 +709,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = Input::get('year')."-".$key."-01";
                         $to = Input::get('year')."-".$key."-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $i++;
@@ -737,7 +719,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Years"){
             $row1 = range(Input::get('start'),Input::get('end'));
@@ -754,9 +736,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = $value."-01-01";
                         $to = $value."-12-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $i++;
@@ -765,7 +746,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Age Range"){
             //setting the limits
@@ -802,10 +783,9 @@ class GeneralController extends \BaseController {
                         $time1 = $i*365*24*3600;
                         $timerange1 = strtotime($today) - $time1;
                         $end = date("Y",$timerange1)."-01-01";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
-                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('birth_date',array($end,$start));
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereIn('license', Licence::whereBetween('dob',array($end,$start))->get()->lists('licenceNo')+array('0'));
                         $column .= ($i < $limit)?$que->count().",":$que->count();
                         $k=$i;
                     }
@@ -814,7 +794,7 @@ class GeneralController extends \BaseController {
                 }
             }
 
-            $title = Input::get('vertical')." Age Range ". $query[2]." ";
+            $title = Input::get('vertical')." Age Range ". $query[1]." ";
 
         }
         $row .= "]";
@@ -883,9 +863,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = Input::get('year')."-".$key."-01";
                         $to = Input::get('year')."-".$key."-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?"['".$value."',".$que->count()."],":"['".$value."',".$que->count()."]";
                         $i++;
@@ -895,7 +874,7 @@ class GeneralController extends \BaseController {
                 }
                 $column .= "]}";
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Years"){
             $row1 = range(Input::get('start'),Input::get('end'));
@@ -912,9 +891,8 @@ class GeneralController extends \BaseController {
                     foreach($row1 as $key => $value){
                         $from = $value."-01-01";
                         $to = $value."-12-31";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column .= ($i < count($row1))?$que->count().",":$que->count();
                         $i++;
@@ -923,7 +901,7 @@ class GeneralController extends \BaseController {
                     $col++;
                 }
             }
-            $title = Input::get('vertical')." ". $query[2]." ".Input::get('Year');
+            $title = Input::get('vertical')." ". $query[1]." ".Input::get('Year');
         }
         elseif(Input::get("horizontal") == "Age Range"){
             //setting the limits
@@ -960,10 +938,9 @@ class GeneralController extends \BaseController {
                         $time1 = $i*365*24*3600;
                         $timerange1 = strtotime($today) - $time1;
                         $end = date("Y",$timerange1)."-01-01";
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
-                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('birth_date',array($end,$start));
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereIn('license', Licence::whereBetween('dob',array($end,$start))->get()->lists('licenceNo')+array('0'));
                         $column .= ($i < $limit)?$que->count().",":$que->count();
                         $k=$i;
                     }
@@ -972,7 +949,7 @@ class GeneralController extends \BaseController {
                 }
             }
 
-            $title = Input::get('vertical')." Age Range ". $query[2]." ";
+            $title = Input::get('vertical')." Age Range ". $query[1]." ";
 
         }
 
@@ -1022,6 +999,88 @@ class GeneralController extends \BaseController {
     public function excelDownload(){
         /** Include PHPExcel */
         require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
+        $title = "";$pat = false;
+        $row = array();
+        $column = array();
+        $columntype = $this->generateArray(Input::get("show"));
+
+        if(Input::get("horizontal") == "Year"){
+            $row = array("01"=>"jan","02"=>"feb","03"=>"mar","04"=>"apr","05"=>"may","06"=>"jun","07"=>"jul","08"=>"aug","09"=>"sep","10"=>"oct","11"=>"nov","12"=>"dec");
+
+            foreach($row as $key => $value){
+                $from = Input::get('year')."-".$key."-01";
+                $to = Input::get('year')."-".$key."-31";
+                if(isset($columntype)){
+                    foreach($columntype as $key1=>$value1){
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
+                        $column[$value1][] = $que->count();
+                    }
+                    $title = Input::get('vertical')." ". $query[1]." ".Input::get('year');;
+                }
+            }
+        }
+        elseif(Input::get("horizontal") == "Years"){
+            $row = range(Input::get('start'),Input::get('end'));
+
+            foreach($row as $value){
+                $from = $value."-01-01";
+                $to = $value."-12-31";
+                if(isset($columntype)){
+                    foreach($columntype as $key1=>$value1){
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
+                        $column[$value1][] = $que->count();
+                    }
+                    $title = Input::get('vertical')." ". $query[1]." ".Input::get('start')." - ".Input::get('end');
+                }
+            }
+        }
+        elseif(Input::get("horizontal") == "Age Range"){
+            //setting the limits
+            if((parent::maxAge()%Input::get('age')) == 0){
+                $limit = parent::maxAge();
+            } else{
+                $limit = (parent::maxAge()-(parent::maxAge()%Input::get('age')))+Input::get('age');
+            }
+            //making a loop for values
+            //year iterator
+            $k = 0;
+            //getting age
+            $range = Input::get('age');
+            $yeardate = date("Y")+1;
+            $yaerdate1 = $yeardate."-01-01";
+
+            //creating title
+            $data = array();
+            for($i=$range;$i<=$limit;$i+=$range){
+                $row[] = $k ." - ". $i;
+                //start year
+                $time = $k*365*24*3600;
+                $today = date("Y-m-d");
+                $timerange = strtotime($today) - $time;
+                $start  = (date("Y",$timerange)+1)."-01-01";
+                //end year
+                $time1 = $i*365*24*3600;
+                $timerange1 = strtotime($today) - $time1;
+                $end = date("Y",$timerange1)."-01-01";
+                if(isset($columntype)){
+                    foreach($columntype as $key1=>$value1){
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
+                        $que = $this->checkCondition($query,$pat,$key1)->whereIn('license', Licence::whereBetween('dob',array($end,$start))->get()->lists('licenceNo')+array('0'));
+                        $column[$value1][] = $que->count();
+                    }
+                    $title = Input::get('vertical')." Age Range ". $query[1];
+                }
+                $k=$i;
+            }
+        }
+
+
+
 
 
         // Create new PHPExcel object
@@ -1030,27 +1089,59 @@ class GeneralController extends \BaseController {
         // Set document properties
         $objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
             ->setLastModifiedBy("Maarten Balliauw")
-            ->setTitle("Office 2007 XLSX Test Document")
-            ->setSubject("Office 2007 XLSX Test Document")
-            ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
+            ->setTitle( $title )
+            ->setSubject($title)
+            ->setDescription($title)
             ->setKeywords("office 2007 openxml php")
-            ->setCategory("Test result file");
+            ->setCategory($title);
 
+        ?>
+                <?php
 
-        // Add some data
         $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'Hello')
-            ->setCellValue('B2', 'world!')
-            ->setCellValue('C1', 'Hello')
-            ->setCellValue('D2', 'world!');
+            ->setCellValue('A1', Input::get('show'));
 
-        // Miscellaneous glyphs, UTF-8
-        $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A4', 'Miscellaneous glyphs')
-            ->setCellValue('A5', 'éàèùâêîôûëïüÿäöüç');
+        $k=0;
+        $latter = array("B","C","D","E","F","G","H","I","J","K","L","M");
+                foreach($row as $header){
+                    $objPHPExcel->setActiveSheetIndex(0)
+                        ->setCellValue($latter[$k]."1", $header);
+                   $k++;
+                }
+                ?>
+            <?php
+        $j=2;
+
+        foreach($column as $keys => $cols){ ?>
+                <tr>
+                    <td><?php
+                        if(Input::get('show') == 'Regions'){
+                            $objPHPExcel->setActiveSheetIndex(0)
+                                ->setCellValue('A'.$j, Region::find($keys)->region);
+                        }elseif(Input::get('show') == 'Districts' ){
+                            $objPHPExcel->setActiveSheetIndex(0)
+                            ->setCellValue('A'.$j, District::find($keys)->district);
+                        }else{
+                            $objPHPExcel->setActiveSheetIndex(0)
+                            ->setCellValue('A'.$j, $keys);
+                        }
+                        ?></td>
+                    <?php
+                    $m=0;
+                    foreach($cols as $colsval){
+                        $objPHPExcel->setActiveSheetIndex(0)
+                            ->setCellValue($latter[$m].$j, $colsval);
+                        $k++;
+                    }
+                    ?>
+                </tr>
+            <?php
+        $j++;} ?>
+
+        <?php
 
         // Rename worksheet
-        $objPHPExcel->getActiveSheet()->setTitle('Simple');
+        $objPHPExcel->getActiveSheet()->setTitle($title);
 
 
         // Set active sheet index to the first sheet, so Excel opens this as the first sheet

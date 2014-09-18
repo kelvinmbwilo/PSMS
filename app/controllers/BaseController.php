@@ -16,13 +16,16 @@ class BaseController extends Controller {
 	}
 
     public function processRegion($offencequery,$value,$title=""){
+
         if($value != ""){
             $title.=" From ";
             foreach($value as $reg){
                 $title .=  Region::find($reg)->region.",";
             }
             $title. " Regions ";
+
             $offencequery->whereIn('region_id', $value);
+
         }
         return array($offencequery,$title);
     }
@@ -64,6 +67,19 @@ class BaseController extends Controller {
     }
 
 
+    public function maxAge(){
+        $query = Licence::all();
+        $datearr = array();
+        foreach($query as $patient) {
+            $dat = strtotime($patient->dob);
+            $dat1 = date("Y", $dat);
+            $datearr[] = $dat1;
+        }
+        $len = count($datearr)-1;
+        rsort($datearr,SORT_NUMERIC);
+        $age  = date("Y")-$datearr[$len];
+        return $age;
+    }
 
 
 

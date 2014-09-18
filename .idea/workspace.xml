@@ -2,13 +2,243 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97d49657-51d7-495b-ba97-90f2b7b7f4ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cars/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/lisence/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/officers/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/hu/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/hu/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/APC.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/APC.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Abstract.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Abstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Abstract.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Abstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/AdvancedValueBinder.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/AdvancedValueBinder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Alignment.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Alignment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/AutoFilter.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/AutoFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Autoloader.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Autoloader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/BIFFwriter.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/BIFFwriter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/BaseDrawing.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/BaseDrawing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Border.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Border.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Borders.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Borders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/CHANGELOG.TXT" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/CHANGELOG.TXT" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/CSV.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/CSV.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/CSV.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/CSV.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/CacheBase.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/CacheBase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorageFactory.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorageFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/CellIterator.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/CellIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/ChainedBlockStream.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/ChainedBlockStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2007/Chart.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2007/Chart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Chart.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Chart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/CodePage.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/CodePage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Color.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Color.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/AutoFilter/Column.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/AutoFilter/Column.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/ColumnDimension.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/ColumnDimension.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Comment.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Comments.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Conditional.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Conditional.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/ContentTypes.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/ContentTypes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/Core.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/Core.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CalcEngine/CyclicReferenceStack.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CalcEngine/CyclicReferenceStack.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/DataSeries.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/DataSeries.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/DataSeriesValues.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/DataSeriesValues.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/DataType.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/DataType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/DataValidation.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/DataValidation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Database.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Date.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Date.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/DateTime.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/DateTime.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/DefaultReadFilter.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/DefaultReadFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/DefaultValueBinder.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/DefaultValueBinder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DgContainer.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DgContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DggContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/DiscISAM.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/DiscISAM.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/DocProps.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/DocProps.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/DocumentProperties.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/DocumentProperties.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/DocumentSecurity.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/DocumentSecurity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/DomPDF.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/DomPDF.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Drawing.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Drawing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Drawing.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Drawing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Drawing.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Drawing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Engineering.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Engineering.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/utils/Error.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/utils/Error.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5/Escher.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5/Escher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Escher.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Escher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2003XML.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2003XML.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2007.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2007.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Excel5.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Excel5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Exception.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Exception.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Exception.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Exception.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Exception.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/ExceptionHandler.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/ExceptionHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/File.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/PPS/File.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/PPS/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Fill.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Fill.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Financial.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Financial.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Font.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Font.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Font.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Font.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Font.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Font.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/FormulaParser.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/FormulaParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/FormulaToken.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/FormulaToken.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Function.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Function.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Functions.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/GeneralController.php" afterPath="$PROJECT_DIR$/app/controllers/GeneralController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Gnumeric.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Gnumeric.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/HTML.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/HTML.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/HTML.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/HTML.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/HashTable.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/HashTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/HeaderFooter.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/HeaderFooter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/HeaderFooterDrawing.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/HeaderFooterDrawing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/Hyperlink.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/Hyperlink.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/ICache.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/ICache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/IComparable.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/IComparable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/IOFactory.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/IOFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/IReadFilter.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/IReadFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/IReader.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/IReader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText/ITextElement.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText/ITextElement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/IValueBinder.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Cell/IValueBinder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/IWriter.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/IWriter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Igbinary.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Igbinary.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/LUDecomposition.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/LUDecomposition.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Layout.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Layout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Legend.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Legend.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CalcEngine/Logger.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CalcEngine/Logger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Logical.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Logical.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/LookupRef.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/LookupRef.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5/MD5.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5/MD5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/MathTrig.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/MathTrig.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/utils/Maths.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/utils/Maths.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/Matrix.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/Matrix.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Memcache.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Memcache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Memory.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Memory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/MemoryDrawing.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/MemoryDrawing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/MemoryGZip.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/MemoryGZip.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/MemorySerialized.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/MemorySerialized.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/NamedRange.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/NamedRange.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/NumberFormat.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/NumberFormat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLERead.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLERead.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/OOCalc.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/OOCalc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/PHPTemp.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/PHPTemp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/PPS.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/PPS.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/PageMargins.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/PageMargins.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/PageSetup.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/PageSetup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Parser.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Parser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PasswordHasher.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PasswordHasher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/PlotArea.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/PlotArea.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Protection.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Protection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Protection.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Protection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/QRDecomposition.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/QRDecomposition.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5/RC4.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel5/RC4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/ReferenceHelper.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/ReferenceHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Rels.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Rels.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/RelsRibbon.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/RelsRibbon.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/RelsVBA.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/RelsVBA.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/PPS/Root.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/OLE/PPS/Root.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Row.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Row.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/RowDimension.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/RowDimension.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/RowIterator.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/RowIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText/Run.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText/Run.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/SQLite.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/SQLite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/SQLite3.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/SQLite3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/SYLK.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/SYLK.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Settings.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Drawing/Shadow.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/Drawing/Shadow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/SheetView.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet/SheetView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Token/Stack.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Token/Stack.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Statistical.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/Statistical.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/String.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/String.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/StringTable.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/StringTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Style.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Style.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Supervisor.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Style/Supervisor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/TextData.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/TextData.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText/TextElement.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/RichText/TextElement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2007/Theme.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Reader/Excel2007/Theme.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Theme.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Theme.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/TimeZone.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/TimeZone.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Title.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Title.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Wincache.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/CachedObjectStorage/Wincache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Workbook.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Workbook.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Workbook.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Workbook.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Worksheet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Worksheet.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/Worksheet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Worksheet.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Worksheet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/WorksheetIterator.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/WorksheetIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/WriterPart.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel2007/WriterPart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/XMLWriter.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/XMLWriter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Xf.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/Excel5/Xf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/ZipArchive.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/ZipArchive.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/ZipStreamWrapper.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/ZipStreamWrapper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/bestFitClass.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/bestFitClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/bg/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/bg/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/cs/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/cs/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/da/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/da/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/de/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/de/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/en/uk/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/en/uk/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/es/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/es/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fi/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fi/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fr/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fr/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/hu/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/hu/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/it/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/it/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/nl/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/nl/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/no/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/no/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pl/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pl/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/br/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/br/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/ru/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/ru/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/sv/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/sv/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/tr/config" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/tr/config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/exponentialBestFitClass.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/exponentialBestFitClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/functionlist.txt" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Calculation/functionlist.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/cs/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/cs/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/da/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/da/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/de/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/de/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/es/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/es/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fi/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fi/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fr/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/fr/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/it/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/it/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/nl/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/nl/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/no/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/no/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pl/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pl/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/br/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/pt/br/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/ru/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/ru/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/sv/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/sv/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/tr/functions" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/locale/tr/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cars/index.blade.php" afterPath="$PROJECT_DIR$/app/views/cars/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/lisence/index.blade.php" afterPath="$PROJECT_DIR$/app/views/lisence/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/officers/index.blade.php" afterPath="$PROJECT_DIR$/app/views/officers/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Renderer/jpgraph.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Chart/Renderer/jpgraph.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/jquery.multiselect.js" afterPath="$PROJECT_DIR$/public/jquery.multiselect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/linearBestFitClass.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/linearBestFitClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/logarithmicBestFitClass.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/logarithmicBestFitClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/mPDF.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/mPDF.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/master.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PCLZip/pclzip.lib.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PCLZip/pclzip.lib.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/polynomialBestFitClass.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/polynomialBestFitClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/powerBestFitClass.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/powerBestFitClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PCLZip/readme.txt" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/PCLZip/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reports.blade.php" afterPath="$PROJECT_DIR$/app/views/reports.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/statistics.blade.php" afterPath="$PROJECT_DIR$/app/views/statistics.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/tcPDF.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Writer/PDF/tcPDF.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/trendClass.php" afterPath="$PROJECT_DIR$/app/controllers/Classes/PHPExcel/Shared/trend/trendClass.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PSMS.iws" />
@@ -35,16 +265,16 @@
       <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="208" column="64" selection-start="8332" selection-end="8332" vertical-scroll-proportion="4.7777777" vertical-offset="3873" max-vertical-offset="4446">
+            <state line="19" column="40" selection-start="745" selection-end="745" vertical-scroll-proportion="-3.2222223" vertical-offset="255" max-vertical-offset="4482">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reports.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="reports.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/reports.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="37" selection-start="1798" selection-end="1798" vertical-scroll-proportion="9.818182" vertical-offset="1350" max-vertical-offset="4428">
+            <state line="93" column="36" selection-start="4738" selection-end="4738" vertical-scroll-proportion="3.1644611" vertical-offset="0" max-vertical-offset="4446">
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
@@ -55,6 +285,17 @@
                 <element signature="n#style#0;n#img#0;n#div#4;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.multiselect.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/jquery.multiselect.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="704" column="11" selection-start="26124" selection-end="26124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12780">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,27 +313,33 @@
       <file leaf-file-name="BaseController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="43" selection-start="1682" selection-end="1682" vertical-scroll-proportion="-11.037037" vertical-offset="782" max-vertical-offset="1368">
+            <state line="73" column="42" selection-start="1930" selection-end="1930" vertical-scroll-proportion="-23.037037" vertical-offset="692" max-vertical-offset="1656">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneralController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GeneralController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/GeneralController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="10" selection-start="365" selection-end="365" vertical-scroll-proportion="0.67132866" vertical-offset="0" max-vertical-offset="19494">
+            <state line="1143" column="55" selection-start="47238" selection-end="47238" vertical-scroll-proportion="-2.7380953" vertical-offset="15592" max-vertical-offset="16380">
               <folding>
-                <marker date="1411015497057" expanded="true" signature="13414:13461" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="14080:14094" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="14177:14207" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="14278:14287" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="20860:20874" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="20957:20987" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="21058:21067" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="28244:28258" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="28341:28371" placeholder="..." />
-                <marker date="1411015497057" expanded="true" signature="28442:28451" placeholder="..." />
+                <element signature="n#processQuery#0;n#GeneralController#0;n#!!top" expanded="false" />
+                <element signature="n#checkCondition#0;n#GeneralController#0;n#!!top" expanded="false" />
+                <element signature="e#3664#7185#0" expanded="false" />
+                <element signature="e#4612#5430#0" expanded="false" />
+                <element signature="e#5439#7185#0" expanded="false" />
+                <element signature="n#makeBar#0;n#GeneralController#0;n#!!top" expanded="false" />
+                <marker date="1411022790818" expanded="true" signature="13364:13411" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="14030:14044" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="14127:14157" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="14228:14237" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="20499:20513" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="20596:20626" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="20697:20706" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="27733:27747" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="27830:27860" placeholder="..." />
+                <marker date="1411022790818" expanded="true" signature="27931:27940" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -121,9 +368,10 @@
         <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/views/login.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/public/jquery.multiselect.js" />
         <option value="$PROJECT_DIR$/app/views/reports.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/app/controllers/GeneralController.php" />
       </list>
     </option>
@@ -177,6 +425,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PSMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PSMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PSMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,6 +540,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PSMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PSMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PSMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PSMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -346,7 +648,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1565452" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -375,16 +677,11 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/Offence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400" />
+        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
@@ -452,7 +749,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400" />
+        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
@@ -520,7 +819,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400" />
+        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
@@ -581,7 +882,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400" />
+        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
@@ -589,11 +892,6 @@
         <state line="27" column="0" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="833">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3400" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Licence.php">
@@ -694,9 +992,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/jquery.multiselect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="704" column="11" selection-start="26124" selection-end="26124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12780">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="40" selection-start="745" selection-end="745" vertical-scroll-proportion="-3.2222223" vertical-offset="255" max-vertical-offset="4482">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="42" selection-start="1930" selection-end="1930" vertical-scroll-proportion="-23.037037" vertical-offset="692" max-vertical-offset="1656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="442" selection-end="442" vertical-scroll-proportion="-6.947494" vertical-offset="3181" max-vertical-offset="3600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/GeneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1143" column="55" selection-start="47238" selection-end="47238" vertical-scroll-proportion="-2.7380953" vertical-offset="15592" max-vertical-offset="16380">
+          <folding>
+            <element signature="n#processQuery#0;n#GeneralController#0;n#!!top" expanded="false" />
+            <element signature="n#checkCondition#0;n#GeneralController#0;n#!!top" expanded="false" />
+            <element signature="e#3664#7185#0" expanded="false" />
+            <element signature="e#4612#5430#0" expanded="false" />
+            <element signature="e#5439#7185#0" expanded="false" />
+            <element signature="n#makeBar#0;n#GeneralController#0;n#!!top" expanded="false" />
+            <marker date="1411022790818" expanded="true" signature="13364:13411" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="14030:14044" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="14127:14157" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="14228:14237" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="20499:20513" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="20596:20626" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="20697:20706" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="27733:27747" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="27830:27860" placeholder="..." />
+            <marker date="1411022790818" expanded="true" signature="27931:27940" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reports.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="37" selection-start="1798" selection-end="1798" vertical-scroll-proportion="9.818182" vertical-offset="1350" max-vertical-offset="4428">
+        <state line="93" column="36" selection-start="4738" selection-end="4738" vertical-scroll-proportion="3.1644611" vertical-offset="0" max-vertical-offset="4446">
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
@@ -707,38 +1059,6 @@
             <element signature="n#style#0;n#img#0;n#div#4;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#button#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="64" selection-start="8332" selection-end="8332" vertical-scroll-proportion="4.7777777" vertical-offset="3873" max-vertical-offset="4446">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="43" selection-start="1682" selection-end="1682" vertical-scroll-proportion="-11.037037" vertical-offset="782" max-vertical-offset="1368">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/GeneralController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="10" selection-start="365" selection-end="365" vertical-scroll-proportion="0.67132866" vertical-offset="0" max-vertical-offset="19494">
-          <folding>
-            <marker date="1411015497057" expanded="true" signature="13414:13461" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="14080:14094" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="14177:14207" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="14278:14287" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="20860:20874" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="20957:20987" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="21058:21067" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="28244:28258" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="28341:28371" placeholder="..." />
-            <marker date="1411015497057" expanded="true" signature="28442:28451" placeholder="..." />
           </folding>
         </state>
       </provider>
