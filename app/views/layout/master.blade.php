@@ -17,6 +17,7 @@
 
     <!--multiselect-->
     <link href="{{ asset('jquery.multiselect.css') }} " rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('sumoselect.css') }} " rel="stylesheet" type="text/css"/>
     <link href="{{ asset('jquery.multiselect.filter.css') }} " rel="stylesheet" type="text/css"/>
     <!-- Morris chart -->
     <link href="{{ asset('css/morris/morris.css') }}" rel="stylesheet" type="text/css" />
@@ -153,8 +154,13 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fa fa-th"></i> <span>Officers</span>
+                <a href='{{ url("lisence") }}'>
+                    <i class="fa fa-th"></i> <span>License</span>
+                </a>
+            </li>
+            <li>
+                <a href='{{ url("cars") }}'>
+                    <i class="fa fa-th"></i> <span>Cars</span>
                 </a>
             </li>
             <li class="treeview">
@@ -208,6 +214,7 @@
 
 {{ HTML::script("jqueryui/js/jquery-ui-1.10.4.custom.min.js") }}
 <script src="{{ asset('jquery.multiselect.js') }}"></script>
+<script src="{{ asset('jquery.sumoselect.min.js') }}"></script>
 <script src="{{ asset('jquery.multiselect.filter.js') }}"></script>
 <script type="text/javascript" src="{{ asset('Highcharts/js/highcharts.js') }}"></script>
 <script type="text/javascript" src="{{ asset('Highcharts/js/modules/exporting.js') }}"></script>

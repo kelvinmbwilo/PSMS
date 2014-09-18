@@ -95,3 +95,19 @@ Route::post('report/general/pie',array('uses'=>'GeneralController@makePie'));
 
 //displaying line chart
 Route::post('report/general/line',array('uses'=>'GeneralController@makeLine'));
+
+
+
+
+//*******************************************************//
+//********************Cars***************************//
+//*******************************************************//
+Route::get('cars', array('uses' => 'CarController@index'));
+
+
+//*******************************************************//
+//********************License***************************//
+//*******************************************************//
+Route::get('lisence', array('uses' => 'LisenceController@index'));
+
+

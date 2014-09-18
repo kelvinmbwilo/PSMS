@@ -90,7 +90,8 @@ Reports
 <div id="chartarea" class="col-xs-12" style="margin-top: 10px">
     <script>
         $(document).ready(function (){
-            $('.multi').multiselect().multiselectfilter();
+//            $('.multi').multiselect();
+            $('.multi').SumoSelect();
 
             //minimizing the size of input fields
             $("select,input").addClass('input-sm')
