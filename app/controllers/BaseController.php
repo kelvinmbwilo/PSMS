@@ -15,4 +15,16 @@ class BaseController extends Controller {
 		}
 	}
 
+    public function processRegion($offencequery,$value,$title=""){
+        if($value != ""){
+            $title.=" From ";
+            foreach($value as $reg){
+                $title .=  Region::find($reg)->region;
+            }
+            $title. " Regions ";
+            $offencequery->whereIn('region_id', $value);
+        }
+        return array($offencequery,$title);
+    }
+
 }

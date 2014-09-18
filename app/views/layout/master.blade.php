@@ -14,6 +14,10 @@
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
     <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!--multiselect-->
+    <link href="{{ asset('jquery.multiselect.css') }} " rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('jquery.multiselect.filter.css') }} " rel="stylesheet" type="text/css"/>
     <!-- Morris chart -->
     <link href="{{ asset('css/morris/morris.css') }}" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->
@@ -292,6 +296,12 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('js/AdminLTE/demo.js') }}" type="text/javascript"></script>
 
+<!--multiselect and high charts-->
+<script src="{{ asset('jquery.multiselect.js') }}"></script>
+<script src="{{ asset('jquery.multiselect.filter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/highcharts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/modules/exporting.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/themes/sand-signika.js') }}"></script>
 
 </body>
 </html>
