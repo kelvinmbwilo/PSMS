@@ -9,9 +9,9 @@
             <section class="panel">
                 <header class="panel-heading">
         Offenses
-                    <a class="btn btn-success pull-right" href="{{ url('offenses/add') }}">New Offense</a>
-                    New Offense
-                    </button>
+<!--                    <a class="btn btn-success pull-right" href="{{ url('offenses/add') }}">New Offense</a>-->
+<!--                    New Offense-->
+<!--                    </button>-->
 
                 </header>
 
@@ -32,8 +32,10 @@
                             </tr>
                             </thead>
                             <tbody>
+
                     @foreach($offenses as $offense)
                             <tr>
+
                                 <td>{{ $offense->id }}</td>
                                 <td> @if($offense->licence){{$offense->licence->name}} @endif</td>
                                 <td> @if($offense->licence){{$offense->licence->address}} @endif</td>

@@ -153,8 +153,13 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fa fa-th"></i> <span>Officers</span>
+                <a href='{{ url("lisence") }}'>
+                    <i class="fa fa-th"></i> <span>License</span>
+                </a>
+            </li>
+            <li>
+                <a href='{{ url("cars") }}'>
+                    <i class="fa fa-th"></i> <span>Cars</span>
                 </a>
             </li>
             <li class="treeview">
