@@ -9,16 +9,16 @@ class GeneralController extends \BaseController {
      */
     public function index()
     {
-        return View::make("report.index");
+        return View::make("reports");
     }
 
-    public function processQuery($patientquery,$visitquery){
-        $quer = parent::processRegion($patientquery,$visitquery,Input::get('region'),"");
-        $query = parent::processDistrict($quer[0],$quer[1],Input::get('district'),$quer[2]);
-        $query1 = parent::processMarital($query[0],$query[1],Input::get('marital'),$query[2]);
-        $query2 = parent::processDaterange($query1[0],$query1[1],$query1[2]);
+    public function processQuery($offencequery){
+//        $quer = parent::processRegion($offencequery,Input::get('region'),"");
+        $query = parent::processDistrict($quer[0],Input::get('district'),$quer[1]);
+//        $query1 = parent::processOffence($query[0],Input::get('offence'),$query[2]);
+//        $query2 = parent::processSection($query1[0],Input::get('section'),$query1[2]);
 
-        return $query2;
+        return $query;
     }
 
     public function generateArray($value){
@@ -26,138 +26,66 @@ class GeneralController extends \BaseController {
             $columntype = array("Offences"=>"Offences");
         }
         if($value == "Regions"){
-            $columntype = Region::all()->lists('region','id');
+            $columntype = Input::get('region');
         }
         if($value == "Districts"){
-            $columntype = $columntype = District::all()->lists('region','id');
+            $columntype = Input::get('district');
         }
         if($value == "Car type"){
             $columntype = array('Toyota'=>'Toyota','Nissan'=>'Nissan','Benzi'=>'Benzi','Audi'=>'Audi');
         }
         if($value == "Offence Nature"){
-            $columntype = Offence::all()->lists('nature','nature');
+            $columntype = Input::get('offence');
         }
         if($value == "Offence Section"){
-            $columntype = array('R.44'=>'R.44','R.43'=>'R.43','S.107'=>'S.107','R.32'=>'R.32');
+            $columntype = Input::get('section');
         }
         if($value == "Offence Relating"){
             $columntype = array('bicycle/tricycle'=>'bicycle/tricycle','motor vehicle'=>'motor vehicle');
         }
         if($value == "Amount Paid"){
-            $columntype = array('30000'=>'30000','20000'=>'2000');
+            $columntype = array('30,000'=>'30,000','20,000'=>'20,000');
         }
         if($value == "Licence Status"){
             $columntype = array('VALID'=>'Valid','BLOCKED'=>'Blocked','EXPIRED'=>'Expired');
+        }if($value == "Gender"){
+            $columntype = array('Male'=>'Male','Female'=>'Female');
         }
         return $columntype;
     }
     public function checkCondition($query,$pat,$key1){
         switch(Input::get('show')){
             case "General":
-                ($pat)?
-                    $que = $query[0]->where('id','!=',$key1):
-                    $que = $query[1]->where('id','!=',$key1);
+                $que = $query[0]->where('id','!=',$key1);
                 break;
-            case "Marital Status":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::where('marital_status',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', GynecologicalHistory::where('marital_status',$key1)->get()->lists('visit_id')+array('0'));
+            case "Gender":
+                $que = $query[0]->whereIn('license', Licence::where('gender',$key1)->get()->lists('licenceNo')+array('0'));
                 break;
-            case "HIV Status":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::where('HIV_status',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', HivStatus::where('status',$key1)->get()->lists('visit_id')+array('0'));
+            case "Regions":
+                $que = $query[0]->whereIn('region_id', $key1);
                 break;
-            case "HIV Test  Results":
-                if($pat){
-                    ($key1 == 'test')?
-                        $que = $query[1]->whereIn('id', HivStatus::where('pitc_agreed',"yes")->get()->lists('visit_id')+array('0')):
-                        $que = $query[1]->whereIn('id', HivStatus::where('pitc_result',$key1)->get()->lists('visit_id')+array('0'));
+            case "Districts":
+                $que = $query[0]->where('district_id', $key1);
+                break;
+            case "Car type":
+                $que = $query[0]->whereIn('plateNumber', Car::where('type',$key1)->get()->lists('plateNo')+array('0'));
+                break;
+            case "Offence Nature":
+                $que = $query[0]->where('offence', $key1);
+                break;
+            case "Offence Section":
+                $que = $query[0]->whereIn('offence', Offence::where('section',"'%'.$key1.'%'")->get()->lists('nature')+array('0'));
+                break;
+            case "Offence Relating":
+                $que = $query[0]->whereIn('offence', Offence::where('relating',$key1)->get()->lists('nature')+array('0'));
+                break;
+            case "Amount Paid":
+                $que = $query[0]->where('amount', $key1);
+                break;
+            case "Licence Status":
+                $que = $query[0]->whereIn('license', Licence::where('status',$key1)->get()->lists('licenceNo')+array('0'));
+                break;
 
-                }else{
-                    ($key1 == 'test')?
-                        $que = $query[1]->whereIn('id', HivStatus::where('pitc_agreed',"yes")->get()->lists('visit_id')+array('0')):
-                        $que = $query[1]->whereIn('id', HivStatus::where('pitc_result',$key1)->get()->lists('visit_id')+array('0'));
-
-                }
-                break;
-            case "CD4 Count":
-                $arr = explode("-",$key1);
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::whereBetween('cd4_count',array($arr[0],$arr[1]))->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', HivStatus::whereBetween('pitc_cd4',array($arr[0],$arr[1]))->get()->lists('visit_id')+ContraceptiveHistory::where('current_status',$key1)->get()->lists('visit_id')+array('0'));
-                break;
-            case "Decline Reason":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', HivStatus::where('unknown_reason',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', HivStatus::where('unknown_reason',$key1)->get()->lists('visit_id'));
-                break;
-            case "Pap Smear Findings":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PapsmearStatus::where('result_id',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', PapsmearStatus::where('result_id',$key1)->get()->lists('visit_id')+array('0'));
-                break;
-            case "Pap Smear Status":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PapsmearStatus::where('status',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', PapsmearStatus::where('status',$key1)->get()->lists('visit_id')+array('0'));
-                break;
-            case "Colposcopy Findings":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', ColposcopyStatus::where('result_id',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', ColposcopyStatus::where('result_id',$key1)->get()->lists('visit_id')+array('0'));
-                break;
-            case "Colposcopy Status":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', ColposcopyStatus::where('status',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', ColposcopyStatus::where('status',$key1)->get()->lists('visit_id')+array('0'));
-                break;
-            case "Contraceptive History":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', ContraceptiveHistory::where('previous_status',$key1)->get()->lists('patient_id')+ContraceptiveHistory::where('current_status',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', ContraceptiveHistory::where('previous_status',$key1)->get()->lists('visit_id')+ContraceptiveHistory::where('current_status',$key1)->get()->lists('visit_id')+array('0'));
-                break;
-            case "Contraceptive Type":
-                ($pat)?
-                    $que = $query[0]->whereIn('id', ContraceptiveHistory::where('previous_contraceptive_id',$key1)->get()->lists('patient_id')+ContraceptiveHistory::where('current_contraceptive_id',$key1)->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', ContraceptiveHistory::where('previous_contraceptive_id',$key1)->get()->lists('visit_id')+ContraceptiveHistory::where('current_contraceptive_id',$key1)->get()->lists('visit_id')+array('0'));
-                break;
-            case "Menarche":
-                $arr = explode("-",$key1);
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::whereBetween('menarche',array($arr[0],$arr[1]))->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', GynecologicalHistory::whereBetween('menarche',array($arr[0],$arr[1]))->get()->lists('visit_id')+array('0'));
-                break;
-            case "Total Number of Pregnancy":
-                $arr = explode("-",$key1);
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::whereBetween('number_of_pregnancy',array($arr[0],$arr[1]))->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', GynecologicalHistory::whereBetween('number_of_pregnancy',array($arr[0],$arr[1]))->get()->lists('visit_id')+array('0'));
-                break;
-            case "Parity":
-                $arr = explode("-",$key1);
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::whereBetween('parity',array($arr[0],$arr[1]))->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', GynecologicalHistory::whereBetween('parity',array($arr[0],$arr[1]))->get()->lists('visit_id')+array('0'));
-                break;
-            case "Age At first Marriage":
-                $arr = explode("-",$key1);
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::whereBetween('first_marriage',array($arr[0],$arr[1]))->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', GynecologicalHistory::whereBetween('age_at_first_marriage',array($arr[0],$arr[1]))->get()->lists('visit_id')+array('0'));
-                break;
-            case "Number of sexual partners":
-                $arr = explode("-",$key1);
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::whereBetween('partners',array($arr[0],$arr[1]))->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', GynecologicalHistory::whereBetween('sexual_partner',array($arr[0],$arr[1]))->get()->lists('visit_id')+array('0'));
-                break;
-            case "Age At Sexual Debut":
-                $arr = explode("-",$key1);
-                ($pat)?
-                    $que = $query[0]->whereIn('id', PatientReport::whereBetween('age_at_sexual_debut',array($arr[0],$arr[1]))->get()->lists('patient_id')+array('0')):
-                    $que = $query[1]->whereIn('id', GynecologicalHistory::whereBetween('age_at_sexual_debut',array($arr[0],$arr[1]))->get()->lists('visit_id')+array('0'));
-                break;
 
         }
         return $que;
@@ -169,9 +97,6 @@ class GeneralController extends \BaseController {
         $column = array();
         $columntype = $this->generateArray(Input::get("show"));
 
-        if(Input::get("vertical") == "Patients"){
-            $pat = true;
-        }
         if(Input::get("horizontal") == "Year"){
             $row = array("01"=>"jan","02"=>"feb","03"=>"mar","04"=>"apr","05"=>"may","06"=>"jun","07"=>"jul","08"=>"aug","09"=>"sep","10"=>"oct","11"=>"nov","12"=>"dec");
 
@@ -180,13 +105,12 @@ class GeneralController extends \BaseController {
                 $to = Input::get('year')."-".$key."-31";
                 if(isset($columntype)){
                     foreach($columntype as $key1=>$value1){
-                        $patientquery = DB::table('patient');
-                        $visitquery   = DB::table('visit');
-                        $query = $this->processQuery($patientquery,$visitquery);
+                        $offencequery = DB::table('psms_data');
+                        $query = $this->processQuery($offencequery);
                         $que = $this->checkCondition($query,$pat,$key1)->whereBetween('created_at',array($from,$to));
                         $column[$value1][] = $que->count();
                     }
-                    $title = Input::get('vertical')." ". $query[2]." ".Input::get('year');;
+//                    $title = Input::get('vertical')." ". $query[2]." ".Input::get('year');;
                 }
             }
         }
