@@ -25,6 +25,7 @@
             <th>Action</th>
             </thead>
             <tbody>
+
             @foreach(User::all() as $user)
             <tr>
 
