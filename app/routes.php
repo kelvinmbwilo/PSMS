@@ -22,7 +22,10 @@ Route::get('dashboard', function()
 });
 
 
-
+Route::get('statistics', function()
+{
+    return View::make('statistics');
+});
 
 
 
@@ -67,3 +70,28 @@ Route::get('vehicle', array('uses' => 'OffenseController@vehicle'));
 Route::get('bicycle', array('uses' => 'OffenseController@bicycle'));
 Route::post('offenses/add', array('uses' => 'OffenseController@store'));
 Route::get('offenses/add', array('uses' => 'OffenseController@addOffense'));
+
+//*******************************************************//
+//********************Reports***************************//
+//*******************************************************//
+Route::get('reports',array('uses'=>'GeneralController@index'));
+
+Route::post('reports/download',array('uses'=>'GeneralController@excelDownload'));
+
+//displaying table chart
+Route::post('report/general/table',array('uses'=>'GeneralController@makeTable'));
+
+//displaying bar chart
+Route::post('report/general/bar',array('uses'=>'GeneralController@makeBar'));
+
+//displaying column chart
+Route::post('report/general/column',array('uses'=>'GeneralController@makeColumn'));
+
+//displaying combined chart
+Route::post('report/general/combined',array('uses'=>'GeneralController@makeCombined'));
+
+//displaying combined chart
+Route::post('report/general/pie',array('uses'=>'GeneralController@makePie'));
+
+//displaying line chart
+Route::post('report/general/line',array('uses'=>'GeneralController@makeLine'));
