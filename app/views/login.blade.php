@@ -28,7 +28,6 @@
 </head>
 
 <body class="login-body"  style="background-image:url({{asset('img/fabric.png')}})">
-
 <div class="container">
 
     <form class="form-signin" action="{{ url('login') }}"  method="post">

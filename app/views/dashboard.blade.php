@@ -2,8 +2,6 @@
 
 @section('contents')
 
-SAIDA NURUDINI MARTHA SHAKA ISAYAH ZACHARIA
-
 <div id="statistcis">
 @include('statistics')
 </div>

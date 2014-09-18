@@ -14,6 +14,10 @@
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
     <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!--multiselect-->
+    <link href="{{ asset('jquery.multiselect.css') }} " rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('jquery.multiselect.filter.css') }} " rel="stylesheet" type="text/css"/>
     <!-- Morris chart -->
     <link href="{{ asset('css/morris/morris.css') }}" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->
@@ -23,7 +27,7 @@
     <!-- Daterange picker -->
     <link href="{{ asset('css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
-    <link href="{{ asset('css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
+<!--    <link href="{{ asset('css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />-->
     <!-- Theme style -->
     <link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 
@@ -33,9 +37,11 @@
 
     <link href="{{ asset('data-tables/DT_bootstrap.css') }}" rel="stylesheet"/>
 
-    <!-- JQuery 2.0.2 -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    {{ HTML::style("jqueryui/css/cupertino/jquery-ui.css") }}
 
+    <!-- JQuery 2.0.2 -->
+    <script src="{{ asset('jquery-2.0.3.min.js') }} "></script><!-- Bootstrap -->
+    <script src="{{ asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
 
     <script type="text/javascript" language="JavaScript" src="{{ asset('advanced-datatable/media/js/jquery.dataTables.js') }}"></script>
     <script type="text/javascript" language="JavaScript" src="{{ asset('data-tables/DT_bootstrap.js') }}"></script>
@@ -160,8 +166,12 @@
                 <ul class="treeview-menu">
                     <li><a href=""><i class="fa fa-angle-double-right"></i> Licenses </a></li>
                     <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i>Car Informations</a></li>
-                    <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
                 </ul>
+            </li>
+            <li>
+                <a href="{{ url('reports') }}">
+                    <i class="fa fa-th"></i> <span>Reports</span>
+                </a>
             </li>
         </ul>
     </section>
@@ -194,26 +204,26 @@
 
 
 <!-- jQuery UI 1.10.3 -->
-<script src="{{ asset('js/jquery-ui-1.10.3.min.js" type="text/javascript')}}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{ asset('js/jquery.form.js') }} "></script>
+
+{{ HTML::script("jqueryui/js/jquery-ui-1.10.4.custom.min.js") }}
+<script src="{{ asset('jquery.multiselect.js') }}"></script>
+<script src="{{ asset('jquery.multiselect.filter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/highcharts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/modules/exporting.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/themes/sand-signika.js') }}"></script>
+
 <!-- Morris.js charts -->
-<script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')}}"></script>
-<script src="{{ asset('js/plugins/morris/morris.min.js')}}" type="text/javascript"></script>
-<!-- Sparkline -->
-<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>
-<!-- jvectormap -->
-<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}" type="text/javascript"></script>
-<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}" type="text/javascript"></script>
+<!--<script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')}}"></script>-->
+<!--<script src="{{ asset('js/plugins/morris/morris.min.js')}}" type="text/javascript"></script>-->
+<!--<!-- Sparkline -->-->
+<!--<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>-->
+<!--<!-- jvectormap -->-->
+<!--<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}" type="text/javascript"></script>-->
+<!--<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}" type="text/javascript"></script>-->
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('js/plugins/jqueryKnob/jquery.knob.js')}}" type="text/javascript"></script>
-<!-- daterangepicker -->
-<script src="{{ asset('js/plugins/daterangepicker/daterangepicker.js')}}" type="text/javascript"></script>
-<!-- datepicker -->
-<script src="js/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}" type="text/javascript"></script>
-<!-- iCheck -->
+
 <script src="{{ asset('js/plugins/iCheck/icheck.min.js')}}" type="text/javascript"></script>
 
 
@@ -223,6 +233,8 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('js/AdminLTE/demo.js') }}" type="text/javascript"></script>
+<!--multiselect and high charts-->
+
 
 
 </body>
