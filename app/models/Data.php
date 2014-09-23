@@ -13,7 +13,7 @@ class Data extends Eloquent {
 
     public function user()
     {
-        return $this->hasMany('Users', 'rankNo', 'id');
+        return $this->belongsTo('User', 'rankNo', 'id');
 
     }
 
@@ -26,7 +26,7 @@ class Data extends Eloquent {
     }
 
     public function car(){
-        return $this->belongsTo('Car', 'plateNo', 'id');
+        return $this->belongsTo('Car', 'plateNumber', 'plateNo');
     }
 
 

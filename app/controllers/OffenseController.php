@@ -57,6 +57,52 @@ class OffenseController extends \BaseController {
 	}
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function listOffense()
+    {
+        //
+        $list = Offence::all();
+        $list->toarray();
+
+        return View::make('offenses.listOfOffenses', compact('list'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function officers()
+    {
+        //
+        $officers = User::all();
+        $officers->toarray();
+
+        return View::make('offenses.officers');
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function dataSpecific($id)
+    {
+        $data = Data::all();
+        $data->toarray();
+        $offenses = array();
+        foreach ($data as $data){
+            if($data->Hasoffence->id === $id){
+                $offenses[] = $data;
+            }
+        }
+
+        return View::make('offenses.specificOffenses', compact('offenses'));
+    }
+
+    /**
      * Store a newly created offense
      * @return mixed
      */
@@ -97,6 +143,8 @@ class OffenseController extends \BaseController {
         $offenseList -> toarray();
         return View::make('offenses.addOffense' , compact('offenseList'));
     }
+
+
 
 
 	/**

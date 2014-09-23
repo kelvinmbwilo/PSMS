@@ -35,11 +35,14 @@
                 <td>{{ $user->station }}</td>
                 <td class="table-condensed col-xs-pull-2">
                     <div class="btn-group" >
-                        <a href="{{ url('user/edit')}}/{{$user->id}}" class="btn btn-primary" title="edit">
+                        <a href="{{ url('user/edit')}}/{{$user->id}}" class="btn btn-xs btn-primary" title="edit">
                             <i class="fa fa-edit"></i>
                         </a>
-                        <a data-toggle="modal" class="open-DeleteDialog btn btn-danger" data-id="{{$user->id}}" href="#deleteDialog" title="delete">
+                        <a data-toggle="modal" class="open-DeleteDialog btn btn-xs btn-danger" data-id="{{$user->id}}" href="#deleteDialog" title="delete">
                             <i class="fa fa-trash-o"></i>
+                        </a>
+                        <a href='{{ url("user/data/$user->id") }}' class="btn btn-xs btn-success" title="data">
+                            <i class="fa fa-arrow-right">Data</i>
                         </a>
                     </div>
                 </td>

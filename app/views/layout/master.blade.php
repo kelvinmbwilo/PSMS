@@ -163,17 +163,19 @@
                     <i class="fa fa-th"></i> <span>Cars</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-bar-chart-o"></i>
-                    <span>Data</span>
-                    <i class="fa fa-angle-left pull-right"></i>
+
+            <li>
+                <a href="{{ url('list') }}">
+                    <i class="fa fa-th"></i> <span>Offense List</span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-angle-double-right"></i> Licenses </a></li>
-                    <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i>Car Informations</a></li>
-                </ul>
             </li>
+
+            <li>
+                <a href="{{ url('user') }}">
+                    <i class="fa fa-th"></i> <span>Officers</span>
+                </a>
+            </li>
+
             <li>
                 <a href="{{ url('reports') }}">
                     <i class="fa fa-th"></i> <span>Reports</span>

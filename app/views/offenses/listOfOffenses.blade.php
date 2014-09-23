@@ -1,5 +1,15 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: macbook
+ * Date: 9/18/14
+ * Time: 2:55 PM
+ */ ?>
+
+
 @extends('layout.master')
 @section('contents')
+
 <!--main content start-->
 <section class="wrapper">
     <!-- page start-->
@@ -7,11 +17,7 @@
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Cars
-<!--                    <a class="btn btn-success pull-right" href="{{ url('cars/add') }}">New Car</a>-->
-<!--<!--                    New Car-->
-<!--                    </button>-->
-
+                    Offense List
                 </header>
 
                 <div class="panel-body">
@@ -20,23 +26,23 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Type</th>
-                                <th>Make</th>
-                                <th>Color</th>
-                                <th>Plate No</th>
+                                <th>Nature</th>
+                                <th>Section</th>
+                                <th>Relating</th>
+                                <th>Amount</th>
                                 <th>Data</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php $j = 0 ?>
-                            @foreach($cars as $car)
+                            @foreach($list as $mList)
                             <tr>
                                 <td>{{ ++$j }}</td>
-                                <td>{{ $car->type }}</td>
-                                <td>{{ $car->make }}</td>
-                                <td>{{ $car->color }}</td>
-                                <td class="col-lg-3">{{$car->plateNo}}</td>
-                                <td class="col-lg-1"><a href='{{url("cars/$car->id") }}'><i class=" btn btn-xs btn-success fa fa-arrow-right"> Data</i></a></td>
+                                <td>{{ $mList->nature }}</td>
+                                <td>{{ $mList->section }}</td>
+                                <td>{{ $mList->relating }}</td>
+                                <td>{{ $mList->amount }}</td>
+                                <td><a href='{{url("data/$mList->id") }}'><i class=" btn btn-xs btn-success fa fa-arrow-right"> Data</i></a></td>
                             </tr>
                             @endforeach
                             </tbody>

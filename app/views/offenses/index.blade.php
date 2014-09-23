@@ -1,6 +1,5 @@
 @extends('layout.master')
 @section('contents')
-@include('offenses.delete')
     <!--main content start-->
 <section class="wrapper">
     <!-- page start-->
@@ -9,9 +8,9 @@
             <section class="panel">
                 <header class="panel-heading">
         Offenses
-<!--                    <a class="btn btn-success pull-right" href="{{ url('offenses/add') }}">New Offense</a>-->
-<!--                    New Offense-->
-<!--                    </button>-->
+                    <a class="btn btn-success pull-right" href="{{ url('offenses/add') }}">New Offense</a>
+                    New Offense
+                    </button>
 
                 </header>
 
@@ -46,7 +45,7 @@
                                 <td>{{$offense->plateNumber}}</td>
                                 <td class="numeric">{{$offense->created_at}}</td>
                             </tr>
-@endforeach
+                    @endforeach
                             </tbody>
                         </table>
                     </section>

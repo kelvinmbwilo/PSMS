@@ -17,34 +17,27 @@ class CarController extends \BaseController {
     }
 
     /**
+     * @param $id
      * @return mixed
      */
-//    public function bicycle(){
-//        $offenses = array();
-//        $off = Data::all();
-//        $off->toarray();
-//
-//        foreach ($off as $moff){
-//            if($moff->Hasoffence->relating === 'bicycle/tricycle'){
-//                $offenses[] = $moff;
-//            }
-//        }
-//        return View::make('offenses.index', compact('offenses'));
-//    }
+    public function dataSpecific($id)
+    {
+
+        $data = Data::all();
+        $data->toarray();
 
 
+        $offenses = array();
+        foreach ($data as $data){
+            if($data->car->id){
+                if($data->car->id === $id){
+                $offenses[] = $data;
+                }
+            }
+        }
 
-//    public function vehicle(){
-//        $offenses = array();
-//        $off = Data::all();
-//        $off->toarray();
-//        foreach ($off as $moff){
-//            if($moff->Hasoffence->relating === 'motor vehicle'){
-//                $offenses[] = $moff;
-//            }
-//        }
-//        return View::make('offenses.index', compact('offenses'));
-//    }
+        return View::make('cars.carDetails', compact('offenses'));
+    }
 
 
     /**
@@ -57,47 +50,6 @@ class CarController extends \BaseController {
         //
     }
 
-    /**
-     * Store a newly created offense
-     * @return mixed
-     */
-    public function store()
-    {
-        $ingreedients =  Array();
-        $ingreedients = Input::get('ingredients');
-        if (count($ingreedients) === 0){
-            return Redirect::back()->with('message', 'Offense Not Selected!!');
-        }
-        else{
-
-            for ($i=0; $i<sizeof($ingreedients); $i++){
-
-                $val = $ingreedients[$i];
-                $instanse = Offence::find($val);
-
-                Data::create(array(
-                    'offence' => $instanse->nature,
-                    'plateNumber' => Input::get('plateno'),
-                    'rankNo' => Auth::user()->rankNo,
-                    'license' => Input::get('license'),
-                    'commit' => Input::get('commit'),
-                    'amount' => $instanse->amount
-                ));
-
-            }
-
-            return Redirect::To('offenses');
-
-        }
-
-    }
-
-    public function addOffense()
-    {
-        $offenseList =  Offence::all();
-        $offenseList -> toarray();
-        return View::make('offenses.addOffense' , compact('offenseList'));
-    }
 
 
     /**
