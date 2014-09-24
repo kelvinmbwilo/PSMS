@@ -37,10 +37,10 @@
                             <?php $j = 0 ?>
                             @foreach($list as $mList)
                             <tr>
-                                <td>{{ ++$j }}</td>
+                                <td class="col-sm-1">{{ ++$j }}</td>
                                 <td>{{ $mList->nature }}</td>
-                                <td>{{ $mList->section }}</td>
-                                <td>{{ $mList->relating }}</td>
+                                <td class="col-lg-3">{{ $mList->section }}</td>
+                                <td class="col-lg-1">{{ $mList->relating }}</td>
                                 <td>{{ $mList->amount }}</td>
                                 <td><a href='{{url("data/$mList->id") }}'><i class=" btn btn-xs btn-success fa fa-arrow-right"> Data</i></a></td>
                             </tr>

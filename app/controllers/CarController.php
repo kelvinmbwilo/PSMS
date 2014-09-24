@@ -23,6 +23,8 @@ class CarController extends \BaseController {
     public function dataSpecific($id)
     {
 
+        $mCar = Car::find($id);
+
         $data = Data::all();
         $data->toarray();
 
@@ -36,7 +38,7 @@ class CarController extends \BaseController {
             }
         }
 
-        return View::make('cars.carDetails', compact('offenses'));
+        return View::make('cars.carDetails', compact('offenses', 'mCar'));
     }
 
 
