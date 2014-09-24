@@ -90,14 +90,8 @@ class OffenseController extends \BaseController {
      */
     public function dataSpecific($id)
     {
-        $data = Data::all();
-        $data->toarray();
-        $offenses = array();
-        foreach ($data as $data){
-            if($data->Hasoffence->id === $id){
-                $offenses[] = $data;
-            }
-        }
+        $offence  = Offence::find($id);
+        $offenses = $offence->data;
 
         return View::make('offenses.specificOffenses', compact('offenses'));
     }

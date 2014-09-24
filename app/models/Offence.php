@@ -24,9 +24,9 @@ class Offence extends Eloquent implements UserInterface, RemindableInterface {
      */
 
 
-    public function offence()
+    public function data()
     {
-        return $this->belongsTo('Data', 'nature' , 'id');
+        return $this->hasMany('Data', 'offence' , 'nature');
     }
 
 

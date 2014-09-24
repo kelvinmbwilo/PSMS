@@ -16,8 +16,18 @@ class LisenceController extends \BaseController {
 
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function licenseSpecificData($id){
 
+        $license= Licence::find($id);
+        $offenses = $license->data;
+        $offenses->toarray();
 
+        return View::make('lisence.lisenseSpecificData', compact('offenses', 'license'));
+    }
 
     /**
      * Show the form for editing the specified resource.

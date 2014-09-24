@@ -134,5 +134,6 @@ Route::get('cars/{id}', array('uses' => 'CarController@dataSpecific'));
 //********************License***************************//
 //*******************************************************//
 Route::get('lisence', array('uses' => 'LisenceController@index'));
+Route::get('license/data/{id}', array('uses' => 'LisenceController@licenseSpecificData'));
 
 
