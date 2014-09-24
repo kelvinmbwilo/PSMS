@@ -52,7 +52,14 @@ SAIDA NURUDINI MARTHA SHAKA ISAYAH ZACHARIA
                                 $totalCarOffenses++;
                             }
                         }
-                    $percent = $totalCarOffenses/count($totalOffenses)*100;
+                    $devide = 1;
+                    if(count($totalOffenses) === 0 ){
+                        $devide = 1;
+                    }
+                    else{
+                        $devide = count($totalOffenses);
+                    }
+                    $percent = $totalCarOffenses/$devide*100;
                     $carpercentage = $percent;
                     ?>
                     {{ $percent }} <sup style="font-size: 20px">%</sup>
