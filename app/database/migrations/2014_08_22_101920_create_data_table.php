@@ -20,6 +20,8 @@ class CreateDataTable extends Migration {
             $table->string('plateNumber');
             $table->string('rankNo');
             $table->string('license');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->string('commit');
             $table->string('amount');
             $table->timestamps();
