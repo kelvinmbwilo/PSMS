@@ -185,6 +185,8 @@ else if ($tag == 'history') {
         $commit = $_POST['commit'];
         $rankNo = $_POST['RankNo'];
         $amount = $_POST['amount'];
+        $latitude = $_POST['latitude'];
+        $longitude = $_POST['longitude'];
   // echo $rankNo;
      //     $subject = "Registration";
      //    $message = "Hello $fname,nnYou have sucessfully registered to our service.nnRegards,nAdmin.";
@@ -205,7 +207,7 @@ else if ($tag == 'history') {
 */
 
             // store offence
-            $offenceDetails = $db->storeOffence($license, $plateNumber, $offence, $commit, $rankNo,$amount);
+            $offenceDetails = $db->storeOffence($license, $plateNumber, $offence, $commit, $rankNo,$amount, $latitude,$longitude);
             if ($offenceDetails) {
                 // offence stored successfully
             $response["success"] = 1;

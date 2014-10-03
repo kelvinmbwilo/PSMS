@@ -2,8 +2,6 @@
 
 @section('contents')
 
-SAIDA NURUDINI MARTHA SHAKA ISAYAH ZACHARIA
-
 <!-- Small boxes (Stat box) -->
 
 <div class="row">
