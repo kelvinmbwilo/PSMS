@@ -94,7 +94,7 @@
                                         <dt>Year<dt>
                                         <dd> 2010 </dd>
                                         <dt>Owner Name </dt>
-                                        <dd> Jason Derulo </dd>
+                                        <dd>  @if($offenses[0]->licence){{$offenses[0]->licence->name}} @endif </dd>
 
                                         <br>
                                         <br>

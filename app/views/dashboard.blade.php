@@ -8,21 +8,26 @@
 </div>
 
 <div class="row">
-    <div id="map-outer" class="col-md-12">
-        <div id="address" class="col-md-4">
-            <h2>Recently Reported</h2>
-            <address>
-                <strong>Bagamoyo Rd, Kinondoni</strong><br>
-                Black TOYOTA IST<br>
-                4000373843<br>
-                Failing to carry a reflector on a bycicle<br>
-                <abbr>Time:</abbr> 0830 53
-            </address>
-        </div>
-        <div id="mMap">
-            @include('map')
-        </div>
+    <div class="panel">
+        <div class="panel-body">
+            <div id="map-outer" class="col-md-12">
+                <div id="address" class="col-md-4">
+                    <h2>Recently Reported</h2>
+                    <address>
+                        <strong>Bagamoyo Rd, Kinondoni</strong><br>
+                        Black TOYOTA IST<br>
+                        4000373843<br>
+                        Failing to carry a reflector on a bycicle<br>
+                        <abbr>Time:</abbr> 0830 53
+                    </address>
+                </div>
 
+                 <div id="mMap">
+                        @include('map')
+                 </div>
+
+            </div>
+         </div>
     </div>
 </div>
 

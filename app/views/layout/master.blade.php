@@ -64,7 +64,7 @@
 <a href="#" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
     <h2 style="font-size: 28px; margin-top: 12px; font-family: 'Roboto', sans-serif"><b>
-    <span style="color: green">PO</span><span style="color: #000000">L</span><span style="color: #0000ff"></span>IC<span style="color: #ffff00">E</span>
+    <span style="color: green">PO</span><span style="color: #000000">LI</span><span style="color: #0000ff"></span><span style="color: #ffff00">CE</span>
         </b>
     </h2>
 </a>

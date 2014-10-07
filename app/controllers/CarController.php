@@ -24,19 +24,8 @@ class CarController extends \BaseController {
     {
 
         $mCar = Car::find($id);
-
-        $data = Data::all();
-        $data->toarray();
-
-
-        $offenses = array();
-        foreach ($data as $data){
-            if($data->car->id){
-                if($data->car->id === $id){
-                $offenses[] = $data;
-                }
-            }
-        }
+        $offenses = $mCar->data;
+        $offenses->toarray();
 
         return View::make('cars.carDetails', compact('offenses', 'mCar'));
     }
