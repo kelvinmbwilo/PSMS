@@ -187,6 +187,7 @@ else if ($tag == 'history') {
         $amount = $_POST['amount'];
         $latitude = $_POST['latitude'];
         $longitude = $_POST['longitude'];
+
   // echo $rankNo;
      //     $subject = "Registration";
      //    $message = "Hello $fname,nnYou have sucessfully registered to our service.nnRegards,nAdmin.";
@@ -207,7 +208,7 @@ else if ($tag == 'history') {
 */
 
             // store offence
-            $offenceDetails = $db->storeOffence($license, $plateNumber, $offence, $commit, $rankNo,$amount, $latitude,$longitude);
+            $offenceDetails = $db->storeOffence($license , $plateNumber, $offence,$commit, $rankNo,$amount,$latitude, $longitude );
             if ($offenceDetails) {
                 // offence stored successfully
             $response["success"] = 1;
@@ -217,7 +218,9 @@ else if ($tag == 'history') {
             $response["offenceDetails"]["offence"] = $offenceDetails["offence"];
             $response["offenceDetails"]["commit"] = $offenceDetails["commit"];
             $response["offenceDetails"]["rankNo"] = $offenceDetails["rankNo"];
-		  $response["offenceDetails"]["created_at"] = $offenceDetails["created_at"];
+		    $response["offenceDetails"]["created_at"] = $offenceDetails["created_at"];
+            $response["offenceDetails"]["latitude"] = $offenceDetails["latitude"];
+            $response["offenceDetails"]["longitude"] = $offenceDetails["longitude"];
            //    mail($email,$subject,$message,$headers);
                 echo json_encode($response);
             } else {

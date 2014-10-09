@@ -48,9 +48,9 @@ public function forgotPassword($rankNo, $newpassword){
      * Adding new user to mysql database
      * returns user details
      */
-    public function storeOffence($license, $plateNumber, $offence, $commit, $rankNo, $amount) {
+    public function storeOffence($license, $plateNumber, $offence, $commit, $rankNo, $amount, $latitude, $longitude) {
        
-        $result = mysql_query("INSERT INTO psms_data( license, plateNumber, offence, commit,amount, created_at, rankNo) VALUES('$license', '$plateNumber', '$offence', '$commit', '$amount', NOW(),'$rankNo')");
+        $result = mysql_query("INSERT INTO psms_data( license, plateNumber, offence, commit,amount, created_at, rankNo, latitude, longitude) VALUES('$license', '$plateNumber', '$offence', '$commit', '$amount', NOW(),'$rankNo','$latitude','$longitude')");
         // check for successful store
         if ($result) {
             // get user details

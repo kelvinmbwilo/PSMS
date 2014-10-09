@@ -27,6 +27,16 @@ Route::get('statistics', function()
     return View::make('statistics');
 });
 
+Route::get('map', function()
+{
+    return View::make('map');
+});
+
+Route::get('recently', function()
+{
+    return View::make('recently');
+});
+
 
 
 Route::resource('dashboard' , 'DashboardController');

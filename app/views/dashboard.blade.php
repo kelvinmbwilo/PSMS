@@ -7,19 +7,16 @@
     @include('statistics')
 </div>
 
-<div class="row">
+<div class="row" id="myMap">
+    <?php
+    $last = Data::orderBy('id', 'DESC')->get();
+    $mLast = $last[0];
+    ?>
     <div class="panel">
         <div class="panel-body">
             <div id="map-outer" class="col-md-12">
                 <div id="address" class="col-md-4">
-                    <h2>Recently Reported</h2>
-                    <address>
-                        <strong>Bagamoyo Rd, Kinondoni</strong><br>
-                        Black TOYOTA IST<br>
-                        4000373843<br>
-                        Failing to carry a reflector on a bycicle<br>
-                        <abbr>Time:</abbr> 0830 53
-                    </address>
+                       @include('recently')
                 </div>
 
                  <div id="mMap">
@@ -39,7 +36,10 @@
 
     <script>
      function init_map() {
-        var var_location = new google.maps.LatLng(-6.774040,39.241663);
+         var lat = <?php echo $mLast->latitude; ?>;
+         var lng = <?php echo $mLast->longitude; ?>;
+         var rank = <?php echo $mLast->rankNo; ?>;
+         var var_location = new google.maps.LatLng(lat,lng);
         var var_mapoptions = {
               center: var_location,
               zoom: 16
@@ -47,7 +47,7 @@
         var var_marker = new google.maps.Marker({
         position: var_location,
         map: var_map,
-        title:"Rank No: 12BF60"
+        title:"Rank No: "+rank
 
         });
         var var_map = new google.maps.Map(document.getElementById("map-container"),
@@ -73,17 +73,6 @@
         })
     </script>
 
-<script>
-        $(document).ready(function(){
-            function stat(){
-                setTimeout(function() {
-                $("#mMap").load("<?php echo url("map") ?>")
-                    stat();
-            }, 3000);
-            }
-    stat();
-        })
-    </script>
 
 @stop
 
