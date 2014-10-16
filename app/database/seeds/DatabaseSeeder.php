@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
         $this->call('OffenceTableSeeder');
         $this->call('UsersTableSeeder');
+        $this->call('StandardTableSeeder');
+        $this->call('StandardDescriptionTableSeeder');
 
 
 
@@ -609,6 +611,1145 @@ class UsersTableSeeder extends Seeder {
 }}
 
 
+class StandardTableSeeder extends Seeder {
 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('psms_standard')->delete();
+        DB::table('psms_standard')->insert(
+            array(
+                'standard_id'=>'100',
+                'description_id'=>'1',
+                'name'=>'private car',
+                'created_at'=>new DateTime,
+            ),
+            DB::table('psms_standard')->insert(
+                array(
+                    'standard_id'=>'101',
+                    'description_id'=>'1',
+                    'name'=>'foreign car',
+                    'created_at'=>new DateTime,
+
+                ),
+                DB::table('psms_standard')->insert(
+                    array(
+                        'standard_id'=>'102',
+                        'description_id'=>'1',
+                        'name'=>'private motorcycle',
+                        'created_at'=>new DateTime,
+
+                    ),
+                    DB::table('psms_standard')->insert(
+                        array(
+                            'standard_id'=>'103',
+                            'description_id'=>'1',
+                            'name'=>'private pedalcycle',
+                            'created_at'=>new DateTime,
+
+                        ),
+                        DB::table('psms_standard')->insert(
+                            array(
+                                'standard_id'=>'104',
+                                'description_id'=>'1',
+                                'name'=>'pick up',
+                                'created_at'=>new DateTime,
+
+                            ),
+                            DB::table('psms_standard')->insert(
+                                array(
+                                    'standard_id'=>'105',
+                                    'description_id'=>'1',
+                                    'name'=>'private truck',
+                                    'created_at'=>new DateTime,
+
+                                ),
+                                DB::table('psms_standard')->insert(
+                                    array(
+                                        'standard_id'=>'106',
+                                        'description_id'=>'1',
+                                        'name'=>'3 wheeler',
+                                        'created_at'=>new DateTime,
+
+                                    ),
+                                    DB::table('psms_standard')->insert(
+                                        array(
+                                            'standard_id'=>'107',
+                                            'description_id'=>'1',
+                                            'name'=>'guta',
+                                            'created_at'=>new DateTime,
+
+                                        ),
+                                        DB::table('psms_standard')->insert(
+                                            array(
+                                                'standard_id'=>'108',
+                                                'description_id'=>'1',
+                                                'name'=>'mkokoteni',
+                                                'created_at'=>new DateTime,
+
+                                            ),
+                                            DB::table('psms_standard')->insert(
+                                                array(
+                                                    'standard_id'=>'200',
+                                                    'description_id'=>'2',
+                                                    'name'=>'truck',
+                                                    'created_at'=>new DateTime,
+
+                                                ),
+                                                DB::table('psms_standard')->insert(
+                                                    array(
+                                                        'standard_id'=>'201',
+                                                        'description_id'=>'2',
+                                                        'name'=>'HDV/semi trailler',
+                                                        'created_at'=>new DateTime,
+
+                                                    ),
+                                                    DB::table('psms_standard')->insert(
+                                                        array(
+                                                            'standard_id'=>'202',
+                                                            'description_id'=>'2',
+                                                            'name'=>'truck and trailer',
+                                                            'created_at'=>new DateTime,
+
+                                                        ),
+                                                        DB::table('psms_standard')->insert(
+                                                            array(
+                                                                'standard_id'=>'204',
+                                                                'description_id'=>'2',
+                                                                'name'=>'dangerous goods',
+                                                                'created_at'=>new DateTime,
+                                                            ),
+                                                            DB::table('psms_standard')->insert(
+                                                                array(
+                                                                    'standard_id'=>'205',
+                                                                    'description_id'=>'2',
+                                                                    'name'=>'abnormal dimension',
+                                                                    'created_at'=>new DateTime,
+
+                                                                ),
+                                                                DB::table('psms_standard')->insert(
+                                                                    array(
+                                                                        'standard_id'=>'206',
+                                                                        'description_id'=>'2',
+                                                                        'name'=>'abnormal dimension',
+                                                                        'created_at'=>new DateTime,
+
+                                                                    ),
+                                                                    DB::table('psms_standard')->insert(
+                                                                        array(
+                                                                            'standard_id'=>'207',
+                                                                            'description_id'=>'2',
+                                                                            'name'=>'motorcycle',
+                                                                            'created_at'=>new DateTime,
+
+                                                                        ),
+                                                                        DB::table('psms_standard')->insert(
+                                                                            array(
+                                                                                'standard_id'=>'208',
+                                                                                'description_id'=>'2',
+                                                                                'name'=>'tractor',
+                                                                                'created_at'=>new DateTime,
+
+                                                                            ),
+                                                                            DB::table('psms_standard')->insert(
+                                                                                array(
+                                                                                    'standard_id'=>'300',
+                                                                                    'description_id'=>'3',
+                                                                                    'name'=>'government vehicle',
+                                                                                    'created_at'=>new DateTime,
+
+                                                                                ),
+                                                                                DB::table('psms_standard')->insert(
+                                                                                    array(
+                                                                                        'standard_id'=>'301',
+                                                                                        'description_id'=>'3',
+                                                                                        'name'=>'defence force',
+                                                                                        'created_at'=>new DateTime,
+
+                                                                                    ),
+                                                                                    DB::table('psms_standard')->insert(
+                                                                                        array(
+                                                                                            'standard_id'=>'302',
+                                                                                            'description_id'=>'3',
+                                                                                            'name'=>'prison vehicle',
+                                                                                            'created_at'=>new DateTime,
+
+                                                                                        ),
+                                                                                        DB::table('psms_standard')->insert(
+                                                                                            array(
+                                                                                                'standard_id'=>'303',
+                                                                                                'description_id'=>'3',
+                                                                                                'name'=>'national service',
+                                                                                                'created_at'=>new DateTime,
+
+                                                                                            ),
+                                                                                            DB::table('psms_standard')->insert(
+                                                                                                array(
+                                                                                                    'standard_id'=>'304',
+                                                                                                    'description_id'=>'3',
+                                                                                                    'name'=>'police',
+                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                ),
+                                                                                                DB::table('psms_standard')->insert(
+                                                                                                    array(
+                                                                                                        'standard_id'=>'305',
+                                                                                                        'description_id'=>'3',
+                                                                                                        'name'=>'police motorcycle',
+                                                                                                        'created_at'=>new DateTime,
+                                                                                                    ),
+                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                        array(
+                                                                                                            'standard_id'=>'306',
+                                                                                                            'description_id'=>'3',
+                                                                                                            'name'=>'diplomatic vehicle',
+                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                        ),
+                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                            array(
+                                                                                                                'standard_id'=>'400',
+                                                                                                                'description_id'=>'4',
+                                                                                                                'name'=>'fire brigade',
+                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                            ),
+                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                array(
+                                                                                                                    'standard_id'=>'401',
+                                                                                                                    'description_id'=>'4',
+                                                                                                                    'name'=>'ambulance',
+                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                ),
+                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                    array(
+                                                                                                                        'standard_id'=>'402',
+                                                                                                                        'description_id'=>'4',
+                                                                                                                        'name'=>'rescue service',
+                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                    ),
+                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                        array(
+                                                                                                                            'standard_id'=>'500',
+                                                                                                                            'description_id'=>'5',
+                                                                                                                            'name'=>'PSV motorcycle',
+                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                        ),
+                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                            array(
+                                                                                                                                'standard_id'=>'501',
+                                                                                                                                'description_id'=>'5',
+                                                                                                                                'name'=>'PSV 3 wheeler',
+                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                            ),
+                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                array(
+                                                                                                                                    'standard_id'=>'502',
+                                                                                                                                    'description_id'=>'5',
+                                                                                                                                    'name'=>'PSV dtaxi cab',
+                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                ),
+                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                    array(
+                                                                                                                                        'standard_id'=>'503',
+                                                                                                                                        'description_id'=>'5',
+                                                                                                                                        'name'=>'PSV daladala',
+                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                    ),
+                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                        array(
+                                                                                                                                            'standard_id'=>'504',
+                                                                                                                                            'description_id'=>'5',
+                                                                                                                                            'name'=>'private bus',
+                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                        ),
+                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                            array(
+                                                                                                                                                'standard_id'=>'505',
+                                                                                                                                                'description_id'=>'5',
+                                                                                                                                                'name'=>'PSV bus',
+                                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                                            ),
+                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                array(
+                                                                                                                                                    'standard_id'=>'506',
+                                                                                                                                                    'description_id'=>'5',
+                                                                                                                                                    'name'=>'foreign bus',
+                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                ),
+                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                    array(
+                                                                                                                                                        'standard_id'=>'600',
+                                                                                                                                                        'description_id'=>'0',
+                                                                                                                                                        'name'=>'others',
+                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                    ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'1',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'crossing roads',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'2',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'round about',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'3',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'T junction',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'4',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'Y junction',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'5',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'staggered junction',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'6',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'junction > 4 arms',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'7',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'bridge/fly over',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'8',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'rail cross manned',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'9',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'rail cross no sign',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'10',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'pedestrian cross',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                        array(
+                                                                                                                                                            'standard_id'=>'11',
+                                                                                                                                                            'description_id'=>'6',
+                                                                                                                                                            'name'=>'none',
+                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                        ),
+                                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                                            array(
+                                                                                                                                                                'standard_id'=>'1',
+                                                                                                                                                                'description_id'=>'7',
+                                                                                                                                                                'name'=>'uncontrolled',
+                                                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                                                            ),
+                                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                                            array(
+                                                                                                                                                                'standard_id'=>'2',
+                                                                                                                                                                'description_id'=>'7',
+                                                                                                                                                                'name'=>'police officer',
+                                                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                                                            ),
+                                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                                            array(
+                                                                                                                                                                'standard_id'=>'3',
+                                                                                                                                                                'description_id'=>'7',
+                                                                                                                                                                'name'=>'traffic signs',
+                                                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                                                            ),
+                                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                                            array(
+                                                                                                                                                                'standard_id'=>'4',
+                                                                                                                                                                'description_id'=>'7',
+                                                                                                                                                                'name'=>'traffic light',
+                                                                                                                                                                'created_at'=>new DateTime,
+                                                                                                                                                            ),
+                                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                                            array(
+                                                                                                                                                                'standard_id'=>'5',
+                                                                                                                                                                'description_id'=>'7',
+                                                                                                                                                                'name'=>'flashing signal',
+                                                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                                                            ),
+                                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                                            array(
+                                                                                                                                                                'standard_id'=>'6',
+                                                                                                                                                                'description_id'=>'7',
+                                                                                                                                                                'name'=>'none',
+                                                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                                                            ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'1',
+                                                                                                                                                                    'description_id'=>'8',
+                                                                                                                                                                    'name'=>'trunk roads',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'2',
+                                                                                                                                                                    'description_id'=>'8',
+                                                                                                                                                                    'name'=>'regional roads',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'3',
+                                                                                                                                                                    'description_id'=>'8',
+                                                                                                                                                                    'name'=>'district roads',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'4',
+                                                                                                                                                                    'description_id'=>'8',
+                                                                                                                                                                    'name'=>'city roads',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'5',
+                                                                                                                                                                    'description_id'=>'8',
+                                                                                                                                                                    'name'=>'rural roads',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'6',
+                                                                                                                                                                    'description_id'=>'8',
+                                                                                                                                                                    'name'=>'bridge',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'1',
+                                                                                                                                                                    'description_id'=>'9',
+                                                                                                                                                                    'name'=>'paved',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'2',
+                                                                                                                                                                    'description_id'=>'9',
+                                                                                                                                                                    'name'=>'unpaved',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'3',
+                                                                                                                                                                    'description_id'=>'9',
+                                                                                                                                                                    'name'=>'concrete',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'4',
+                                                                                                                                                                    'description_id'=>'9',
+                                                                                                                                                                    'name'=>'metal bridge',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'5',
+                                                                                                                                                                    'description_id'=>'9',
+                                                                                                                                                                    'name'=>'gravel',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                array(
+                                                                                                                                                                    'standard_id'=>'6',
+                                                                                                                                                                    'description_id'=>'9',
+                                                                                                                                                                    'name'=>'sandy',
+                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                        'description_id'=>'10',
+                                                                                                                                                                        'name'=>'no lanes',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                        'description_id'=>'10',
+                                                                                                                                                                        'name'=>'1,2 or 3 lanes',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                        'description_id'=>'10',
+                                                                                                                                                                        'name'=>'hard shoulders',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                        'description_id'=>'10',
+                                                                                                                                                                        'name'=>'straight',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'5',
+                                                                                                                                                                        'description_id'=>'10',
+                                                                                                                                                                        'name'=>'slight curve',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'6',
+                                                                                                                                                                        'description_id'=>'10',
+                                                                                                                                                                        'name'=>'sharp curve',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                        'description_id'=>'11',
+                                                                                                                                                                        'name'=>'flat road',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                        'description_id'=>'11',
+                                                                                                                                                                        'name'=>'gentile slope',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                        'description_id'=>'11',
+                                                                                                                                                                        'name'=>'steep slope',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                        'description_id'=>'11',
+                                                                                                                                                                        'name'=>'hump/bump',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'5',
+                                                                                                                                                                        'description_id'=>'11',
+                                                                                                                                                                        'name'=>'dip(hole/dirt)',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'6',
+                                                                                                                                                                        'description_id'=>'11',
+                                                                                                                                                                        'name'=>'road works',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                        'description_id'=>'12',
+                                                                                                                                                                        'name'=>'dry',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                        'description_id'=>'12',
+                                                                                                                                                                        'name'=>'wet',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                        'description_id'=>'12',
+                                                                                                                                                                        'name'=>'rain',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                        'description_id'=>'12',
+                                                                                                                                                                        'name'=>'water',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'5',
+                                                                                                                                                                        'description_id'=>'12',
+                                                                                                                                                                        'name'=>'muddy',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'6',
+                                                                                                                                                                        'description_id'=>'12',
+                                                                                                                                                                        'name'=>'debris',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                        'description_id'=>'13',
+                                                                                                                                                                        'name'=>'day',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                        'description_id'=>'13',
+                                                                                                                                                                        'name'=>'twilight',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                        'description_id'=>'13',
+                                                                                                                                                                        'name'=>'night',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                        'description_id'=>'13',
+                                                                                                                                                                        'name'=>'smoke',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'5',
+                                                                                                                                                                        'description_id'=>'13',
+                                                                                                                                                                        'name'=>'street light',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                        'description_id'=>'14',
+                                                                                                                                                                        'name'=>'clear',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                        'description_id'=>'14',
+                                                                                                                                                                        'name'=>'cloudy',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                        'description_id'=>'14',
+                                                                                                                                                                        'name'=>'storm',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                        'description_id'=>'14',
+                                                                                                                                                                        'name'=>'fog',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                        'description_id'=>'15',
+                                                                                                                                                                        'name'=>'traffic signal',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                        'description_id'=>'15',
+                                                                                                                                                                        'name'=>'no traffic signal',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                        'description_id'=>'15',
+                                                                                                                                                                        'name'=>'lane marking',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                        'description_id'=>'15',
+                                                                                                                                                                        'name'=>'speed limit/sign',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                        'name'=>'over speed',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                        'name'=>'overload',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                        'name'=>'distance keeping',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                        'name'=>'white lane cross',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'5',
+                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                        'name'=>'red light',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                    array(
+                                                                                                                                                                        'standard_id'=>'6',
+                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                        'name'=>'overtaking',
+                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                    ),
+                                                                                                                                                                    DB::table('psms_standard')->insert(
+                                                                                                                                                                        array(
+                                                                                                                                                                            'standard_id'=>'7',
+                                                                                                                                                                            'description_id'=>'16',
+                                                                                                                                                                            'name'=>'wrong direction',
+                                                                                                                                                                            'created_at'=>new DateTime,
+
+                                                                                                                                                                        ),
+                                                                                                                                                                        DB::table('psms_standard')->insert(
+                                                                                                                                                                            array(
+                                                                                                                                                                                'standard_id'=>'8',
+                                                                                                                                                                                'description_id'=>'16',
+                                                                                                                                                                                'name'=>'drink and drive',
+                                                                                                                                                                                'created_at'=>new DateTime,
+
+                                                                                                                                                                            ),
+                                                                                                                                                                            DB::table('psms_standard')->insert(
+                                                                                                                                                                                array(
+                                                                                                                                                                                    'standard_id'=>'9',
+                                                                                                                                                                                    'description_id'=>'16',
+                                                                                                                                                                                    'name'=>'careless ped',
+                                                                                                                                                                                    'created_at'=>new DateTime,
+
+                                                                                                                                                                                ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'10',
+                                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                                        'name'=>'unsecured load',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'11',
+                                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                                        'name'=>'zebra crossing',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'12',
+                                                                                                                                                                                        'description_id'=>'16',
+                                                                                                                                                                                        'name'=>'others',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'1',
+                                                                                                                                                                                        'description_id'=>'17',
+                                                                                                                                                                                        'name'=>'brakes',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'2',
+                                                                                                                                                                                        'description_id'=>'17',
+                                                                                                                                                                                        'name'=>'bad light',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'3',
+                                                                                                                                                                                        'description_id'=>'17',
+                                                                                                                                                                                        'name'=>'bad tyre',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'4',
+                                                                                                                                                                                        'description_id'=>'17',
+                                                                                                                                                                                        'name'=>'tyre burst',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    ),
+                                                                                                                                                                                DB::table('psms_standard')->insert(
+                                                                                                                                                                                    array(
+                                                                                                                                                                                        'standard_id'=>'5',
+                                                                                                                                                                                        'description_id'=>'17',
+                                                                                                                                                                                        'name'=>'others',
+                                                                                                                                                                                        'created_at'=>new DateTime,
+
+                                                                                                                                                                                    )
+
+
+                                                                                                                                                                                )
+                                                                                                                                                                                ))))))
+                                                                                                                                                                            )
+
+                                                                                                                                                                        )
+
+                                                                                                                                                                    )
+
+                                                                                                                                                                )
+
+                                                                                                                                                            )
+
+                                                                                                                                                        )
+
+                                                                                                                                                    )
+
+                                                                                                                                                )
+
+                                                                                                                                            )
+                                                                                                                                                    )))))))))))
+                                                                                                                                        )
+                                                                                                                                                    )))))))))))))))))))))))
+                                                                                                                                    )
+
+                                                                                                                                )
+
+                                                                                                                            )
+
+                                                                                                                        )
+
+                                                                                                                    )
+
+                                                                                                                )
+
+                                                                                                            )
+
+                                                                                                        )
+
+                                                                                                    )
+
+                                                                                                )
+
+                                                                                            )
+
+                                                                                        )
+
+                                                                                    )
+
+                                                                                )
+
+                                                                            )
+
+                                                                        )
+
+                                                                    )
+
+                                                                )
+
+                                                            )
+
+                                                        )
+
+                                                    )
+
+                                                )
+
+                                            )
+
+                                        )
+
+                                    )
+
+                                )
+
+                            )
+
+                        )
+
+                    )
+
+                )))))))))))))))))))))))))))))))
+
+            );
+
+
+    }}
+
+
+class StandardDescriptionTableSeeder extends Seeder {
+
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('psms_standard_description')->delete();
+        DB::table('psms_standard_description')->insert(
+            array(
+                'id'=>'1',
+                'name'=>'private',
+                'created_at'=>new DateTime,
+
+            ),
+            DB::table('psms_standard_description')->insert(
+                array(
+                    'id'=>'2',
+                    'name'=>'commercial',
+                    'created_at'=>new DateTime,
+
+                ),
+                DB::table('psms_standard_description')->insert(
+                    array(
+                        'id'=>'3',
+                        'name'=>'government',
+                        'created_at'=>new DateTime,
+
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'4',
+                            'name'=>'emergency',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'5',
+                            'name'=>'passenger service vehicles',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'6',
+                            'name'=>'junction structure',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'7',
+                            'name'=>'junction control',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'8',
+                            'name'=>'road class',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'9',
+                            'name'=>'surface type',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'10',
+                            'name'=>'road structure',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'11',
+                            'name'=>'road status',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'12',
+                            'name'=>'road surface',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'13',
+                            'name'=>'light',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'14',
+                            'name'=>'weather',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'15',
+                            'name'=>'control',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'16',
+                            'name'=>'violation',
+                            'created_at'=>new DateTime,
+
+                        )
+                    ),
+                    DB::table('psms_standard_description')->insert(
+                        array(
+                            'id'=>'17',
+                            'name'=>'vehicle defects',
+                            'created_at'=>new DateTime,
+
+                        )
+                    )
+                )
+            ));
+
+
+    }}
 
 

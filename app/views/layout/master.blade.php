@@ -14,6 +14,11 @@
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
     <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!--multiselect-->
+    <link href="{{ asset('jquery.multiselect.css') }} " rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('sumoselect.css') }} " rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('jquery.multiselect.filter.css') }} " rel="stylesheet" type="text/css"/>
     <!-- Morris chart -->
     <link href="{{ asset('css/morris/morris.css') }}" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->
@@ -23,7 +28,7 @@
     <!-- Daterange picker -->
     <link href="{{ asset('css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
-    <link href="{{ asset('css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
+<!--    <link href="{{ asset('css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />-->
     <!-- Theme style -->
     <link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 
@@ -33,9 +38,11 @@
 
     <link href="{{ asset('data-tables/DT_bootstrap.css') }}" rel="stylesheet"/>
 
-    <!-- JQuery 2.0.2 -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    {{ HTML::style("jqueryui/css/cupertino/jquery-ui.css") }}
 
+    <!-- JQuery 2.0.2 -->
+    <script src="{{ asset('jquery-2.0.3.min.js') }} "></script><!-- Bootstrap -->
+    <script src="{{ asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
 
     <script type="text/javascript" language="JavaScript" src="{{ asset('advanced-datatable/media/js/jquery.dataTables.js') }}"></script>
     <script type="text/javascript" language="JavaScript" src="{{ asset('data-tables/DT_bootstrap.js') }}"></script>
@@ -147,89 +154,32 @@
                 </a>
             </li>
             <li>
-                <a href="pages/widgets.html">
+                <a href='{{ url("lisence") }}'>
+                    <i class="fa fa-th"></i> <span>License</span>
+                </a>
+            </li>
+            <li>
+                <a href='{{ url("cars") }}'>
+                    <i class="fa fa-th"></i> <span>Cars</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url('list') }}">
+                    <i class="fa fa-th"></i> <span>Offense List</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url('user') }}">
                     <i class="fa fa-th"></i> <span>Officers</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-bar-chart-o"></i>
-                    <span>Data</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-angle-double-right"></i> Licenses </a></li>
-                    <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i>Car Informations</a></li>
-                    <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>UI Elements</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
-                    <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                    <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                    <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                    <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-edit"></i> <span>Forms</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> General Elements</a></li>
-                    <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
-                    <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-table"></i> <span>Tables</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/tables/simple.html"><i class="fa fa-angle-double-right"></i> Simple tables</a></li>
-                    <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
-                </ul>
-            </li>
+
             <li>
-                <a href="pages/calendar.html">
-                    <i class="fa fa-calendar"></i> <span>Calendar</span>
-                    <small class="badge pull-right bg-red">3</small>
+                <a href="{{ url('reports') }}">
+                    <i class="fa fa-th"></i> <span>Reports</span>
                 </a>
-            </li>
-            <li>
-                <a href="pages/mailbox.html">
-                    <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    <small class="badge pull-right bg-yellow">12</small>
-                </a>
-            </li>
-            <li>
-                <a  href="{{ url('user') }}">
-                    <i class="fa fa-user"></i>
-                    <span>User</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-folder"></i> <span>Examples</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-angle-double-right"></i> Invoice</a></li>
-                    <li><a href="pages/examples/login.html"><i class="fa fa-angle-double-right"></i> Login</a></li>
-                    <li><a href="pages/examples/register.html"><i class="fa fa-angle-double-right"></i> Register</a></li>
-                    <li><a href="pages/examples/lockscreen.html"><i class="fa fa-angle-double-right"></i> Lockscreen</a></li>
-                    <li><a href="pages/examples/404.html"><i class="fa fa-angle-double-right"></i> 404 Error</a></li>
-                    <li><a href="pages/examples/500.html"><i class="fa fa-angle-double-right"></i> 500 Error</a></li>
-                    <li><a href="pages/examples/blank.html"><i class="fa fa-angle-double-right"></i> Blank Page</a></li>
-                </ul>
             </li>
         </ul>
     </section>
@@ -262,26 +212,27 @@
 
 
 <!-- jQuery UI 1.10.3 -->
-<script src="{{ asset('js/jquery-ui-1.10.3.min.js" type="text/javascript')}}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{ asset('js/jquery.form.js') }} "></script>
+
+{{ HTML::script("jqueryui/js/jquery-ui-1.10.4.custom.min.js") }}
+<script src="{{ asset('jquery.multiselect.js') }}"></script>
+<script src="{{ asset('jquery.sumoselect.min.js') }}"></script>
+<script src="{{ asset('jquery.multiselect.filter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/highcharts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/modules/exporting.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/themes/sand-signika.js') }}"></script>
+
 <!-- Morris.js charts -->
-<script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')}}"></script>
-<script src="{{ asset('js/plugins/morris/morris.min.js')}}" type="text/javascript"></script>
-<!-- Sparkline -->
-<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>
-<!-- jvectormap -->
-<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}" type="text/javascript"></script>
-<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}" type="text/javascript"></script>
+<!--<script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')}}"></script>-->
+<!--<script src="{{ asset('js/plugins/morris/morris.min.js')}}" type="text/javascript"></script>-->
+<!--<!-- Sparkline -->-->
+<!--<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>-->
+<!--<!-- jvectormap -->-->
+<!--<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}" type="text/javascript"></script>-->
+<!--<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}" type="text/javascript"></script>-->
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('js/plugins/jqueryKnob/jquery.knob.js')}}" type="text/javascript"></script>
-<!-- daterangepicker -->
-<script src="{{ asset('js/plugins/daterangepicker/daterangepicker.js')}}" type="text/javascript"></script>
-<!-- datepicker -->
-<script src="js/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}" type="text/javascript"></script>
-<!-- iCheck -->
+
 <script src="{{ asset('js/plugins/iCheck/icheck.min.js')}}" type="text/javascript"></script>
 
 
@@ -291,6 +242,8 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('js/AdminLTE/demo.js') }}" type="text/javascript"></script>
+<!--multiselect and high charts-->
+
 
 
 </body>

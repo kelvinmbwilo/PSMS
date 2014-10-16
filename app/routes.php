@@ -22,7 +22,10 @@ Route::get('dashboard', function()
 });
 
 
-
+Route::get('statistics', function()
+{
+    return View::make('statistics');
+});
 
 
 
@@ -48,6 +51,9 @@ Route::get('user/edit/{id}', array('uses'=>'UserController@update')); //edit use
 Route::post('user/edit/{id}', array('uses'=>'UserController@edit')); //process edited users
 Route::get('userindex', array('uses'=>'UserController@index'));//displaying messages
 
+//displaying all the datas entered by this user
+Route::get('user/data/{id}', array('uses' => 'UserController@userDataSpecific'));
+
 
 
 
@@ -63,7 +69,70 @@ Route::get('logout', array('uses'=>'LoginController@logout')); //process logout 
 //********************Offenses***************************//
 //*******************************************************//
 Route::get('offenses', array('uses' => 'OffenseController@index'));
+
+//displaying vehicle type offences
 Route::get('vehicle', array('uses' => 'OffenseController@vehicle'));
+
+//displaying bicycle type offenses
 Route::get('bicycle', array('uses' => 'OffenseController@bicycle'));
+
+//adding offense to the database
 Route::post('offenses/add', array('uses' => 'OffenseController@store'));
+
+//getting the add offense interface
 Route::get('offenses/add', array('uses' => 'OffenseController@addOffense'));
+
+//displaying the list of all offenses
+Route::get('list', array('uses' => 'OffenseController@listOffense'));
+
+//displaying the list of all officers in the database
+Route::get('officers', array('uses' => 'OffenseController@officers'));
+
+//displaying data specific to certain offenses
+Route::get('data/{id}', array('uses' => 'OffenseController@dataSpecific'));
+
+
+
+//*******************************************************//
+//********************Reports***************************//
+//*******************************************************//
+Route::get('reports',array('uses'=>'GeneralController@index'));
+
+Route::post('reports/download',array('uses'=>'GeneralController@excelDownload'));
+
+//displaying table chart
+Route::post('report/general/table',array('uses'=>'GeneralController@makeTable'));
+
+//displaying bar chart
+Route::post('report/general/bar',array('uses'=>'GeneralController@makeBar'));
+
+//displaying column chart
+Route::post('report/general/column',array('uses'=>'GeneralController@makeColumn'));
+
+//displaying combined chart
+Route::post('report/general/combined',array('uses'=>'GeneralController@makeCombined'));
+
+//displaying combined chart
+Route::post('report/general/pie',array('uses'=>'GeneralController@makePie'));
+
+//displaying line chart
+Route::post('report/general/line',array('uses'=>'GeneralController@makeLine'));
+
+
+
+
+//*******************************************************//
+//********************Cars***************************//
+//*******************************************************//
+Route::get('cars', array('uses' => 'CarController@index'));
+
+//displaying data specific to certain car including all the offenses ever registered
+Route::get('cars/{id}', array('uses' => 'CarController@dataSpecific'));
+
+
+//*******************************************************//
+//********************License***************************//
+//*******************************************************//
+Route::get('lisence', array('uses' => 'LisenceController@index'));
+
+

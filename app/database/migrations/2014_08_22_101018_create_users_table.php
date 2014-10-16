@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration {
             $table->string('fullName');
             $table->string('email');
             $table->string('station');
+            $table->integer('RegionId');
+            $table->integer('districtId');
             $table->string('password');
             $table->string('remember_token');
             $table->timestamps();

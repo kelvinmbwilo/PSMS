@@ -24,6 +24,21 @@ class UserController extends \BaseController {
         return View::make('user.add');
     }
 
+    /**
+     * @param $id
+     */
+    public function userDataSpecific($id){
+        $data = Data::all();
+        $data->toarray();
+        $offenses = array();
+        foreach($data as $data){
+            if($data -> rankNo === $id){
+                $offenses[] = $data;
+            }
+        }
+        return View::make('user.userSpecificData', compact('offenses'));
+    }
+
 
     /**
      * Store a newly created resource in storage.

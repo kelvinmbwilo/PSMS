@@ -16,10 +16,17 @@ class CreateCarTable extends Migration {
         Schema::create('psms_car', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('type');
+            $table->integer('type');
+            $table->string('registration_number');
             $table->string('make');
             $table->string('color');
             $table->string('plateNo');
+            $table->string('YOM');
+            $table->string('chassis_number');
+            $table->string('owner_fullname');
+            $table->string('nationality');
+            $table->string('physical_address');
+            $table->string('address');
             $table->timestamps();
         });
     }

@@ -22,14 +22,6 @@
         <span id="responce" style="opacity: 0; color: "> Successful.. </span>
         <form class="form" method="post" action="{{ url('offenses/add') }}">
             <div class="panel-body">
-                <div class="form-group col-lg-6">
-                    <label >Name</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
-                </div>
-                <div class="form-group col-lg-6">
-                    <label>Address</label>
-                    <input type="text" class="form-control"name="address" id="address" placeholder="Enter address">
-                </div>
                 <br>
                 <br>
                 <br>

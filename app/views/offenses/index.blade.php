@@ -1,6 +1,5 @@
 @extends('layout.master')
 @section('contents')
-@include('offenses.delete')
     <!--main content start-->
 <section class="wrapper">
     <!-- page start-->
@@ -32,8 +31,10 @@
                             </tr>
                             </thead>
                             <tbody>
+
                     @foreach($offenses as $offense)
                             <tr>
+
                                 <td>{{ $offense->id }}</td>
                                 <td> @if($offense->licence){{$offense->licence->name}} @endif</td>
                                 <td> @if($offense->licence){{$offense->licence->address}} @endif</td>
@@ -44,7 +45,7 @@
                                 <td>{{$offense->plateNumber}}</td>
                                 <td class="numeric">{{$offense->created_at}}</td>
                             </tr>
-@endforeach
+                    @endforeach
                             </tbody>
                         </table>
                     </section>

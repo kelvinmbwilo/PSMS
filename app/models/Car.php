@@ -23,10 +23,8 @@ class Car extends Eloquent implements UserInterface, RemindableInterface {
      * @var array
      */
 
-
-    public function owner()
-    {
-        return $this->belongsTo('Data', 'plateNo' , 'id');
+    public function data(){
+        return $this->hasMany('Data', 'plateNumber', 'plateNo');
     }
 
 
