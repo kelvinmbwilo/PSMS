@@ -1,6 +1,5 @@
 @extends('layout.master')
 @section('contents')
-
 <!--main content start-->
 <section class="wrapper">
     <!-- page start-->
@@ -8,7 +7,11 @@
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Licenses
+                    Road Offenses Done By {{ $license->name }}
+<!--                    <a class="btn btn-success pull-right" href="{{ url('offenses/add') }}">New Offense</a>-->
+<!--                    New Offense-->
+<!--                    </button>-->
+
                 </header>
 
                 <div class="panel-body">
@@ -16,28 +19,25 @@
                         <table id="dynamic-table" class="table table-bordered table-striped table-condensed">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>License Number</th>
-                                <th>Address</th>
-                                <th>Class</th>
-                                <th>Expiry Date</th>
-                                <th>Status</th>
-                                <th>Data</th>
+                                <th>Offense No</th>
+                                <th>Offense</th>
+                                <th>Part</th>
+                                <th>Amount</th>
+                                <th>Reg No</th>
+                                <th class="numeric">Date</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $j = 0 ?>
-                            @foreach($lisence as $lisence)
+
+                            @foreach($offenses as $offense)
                             <tr>
-                                <td>{{ ++$j }}</td>
-                                <td>{{ $lisence->name }}</td>
-                                <td>{{ $lisence->licenceNo }}</td>
-                                <td>{{ $lisence->address }}</td>
-                                <td>{{ $lisence->class }}</td>
-                                <td>{{ $lisence->expiryDate }}</td>
-                                <td>{{$lisence->status}}</td>
-                                <td><a class="btn btn-xs btn-success" href='{{ url("license/data/$lisence->id") }}'><i class="fa fa-arrow-right">Data</i> </a> </td>
+
+                                <td>{{ $offense->id }}</td>
+                                <td class="col-lg-3">{{$offense->offence}}</td>
+                                <td>{{$offense->commit}}</td>
+                                <td>{{$offense->amount}}</td>
+                                <td>{{$offense->plateNumber}}</td>
+                                <td class="numeric">{{$offense->created_at}}</td>
                             </tr>
                             @endforeach
                             </tbody>

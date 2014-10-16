@@ -50,16 +50,23 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="{{ asset('js/html5shiv.js') }} "></script>
+    <script src="{{ asset('js/respond.min.js') }} "></script>
     <![endif]-->
+
+    <style>
+        #map-container { height: 300px }
+    </style>
 </head>
-<body class="skin-blue">
+<body class="skin-black">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
-<a href="index.html" class="logo">
+<a href="#" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    PSMS
+    <h2 style="font-size: 28px; margin-top: 12px; font-family: 'Roboto', sans-serif"><b>
+    <span style="color: green">PO</span><span style="color: #000000">LI</span><span style="color: #0000ff"></span><span style="color: #ffff00">CE</span>
+        </b>
+    </h2>
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">
@@ -122,25 +129,15 @@
     <section class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel">
-            <div class="pull-left image">
-                <img src="img/avatar3.png" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
+<!--            <div class="pull-left image">-->
+<!--                <img src="img/avatar3.png" class="img-circle" alt="User Image" />-->
+<!--            </div>-->
+            <div class="text-center info">
                 <p>Hello, Marwa</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-            </div>
-        </form>
-        <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="active">
@@ -191,8 +188,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Dashboard
-        <small>Control panel</small>
+        Home
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -225,9 +221,9 @@
 <!-- Morris.js charts -->
 <!--<script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')}}"></script>-->
 <!--<script src="{{ asset('js/plugins/morris/morris.min.js')}}" type="text/javascript"></script>-->
-<!--<!-- Sparkline -->-->
+<!--<!-- Sparkline -->
 <!--<script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>-->
-<!--<!-- jvectormap -->-->
+<!--<!-- jvectormap -->
 <!--<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}" type="text/javascript"></script>-->
 <!--<script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}" type="text/javascript"></script>-->
 <!-- jQuery Knob Chart -->

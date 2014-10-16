@@ -27,6 +27,16 @@ Route::get('statistics', function()
     return View::make('statistics');
 });
 
+Route::get('map', function()
+{
+    return View::make('map');
+});
+
+Route::get('recently', function()
+{
+    return View::make('recently');
+});
+
 
 
 Route::resource('dashboard' , 'DashboardController');
@@ -134,5 +144,6 @@ Route::get('cars/{id}', array('uses' => 'CarController@dataSpecific'));
 //********************License***************************//
 //*******************************************************//
 Route::get('lisence', array('uses' => 'LisenceController@index'));
+Route::get('license/data/{id}', array('uses' => 'LisenceController@licenseSpecificData'));
 
 

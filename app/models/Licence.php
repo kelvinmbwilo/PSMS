@@ -24,9 +24,9 @@ class Licence extends Eloquent implements UserInterface, RemindableInterface {
      */
 
 
-    public function owner()
+    public function data()
     {
-        return $this->belongsTo('Data', 'licenceNo' , 'id');
+        return $this->hasMany('Data', 'license' , 'licenceNo');
     }
 
 
