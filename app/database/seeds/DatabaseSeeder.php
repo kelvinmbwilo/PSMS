@@ -1616,28 +1616,28 @@ class StandardDescriptionTableSeeder extends Seeder {
         DB::table('psms_standard_description')->insert(
             array(
                 'id'=>'1',
-                'name'=>'private',
+                'name'=>'private vehicle',
                 'created_at'=>new DateTime,
 
             ),
             DB::table('psms_standard_description')->insert(
                 array(
                     'id'=>'2',
-                    'name'=>'commercial',
+                    'name'=>'commercial vehicle',
                     'created_at'=>new DateTime,
 
                 ),
                 DB::table('psms_standard_description')->insert(
                     array(
                         'id'=>'3',
-                        'name'=>'government',
+                        'name'=>'government vehicle',
                         'created_at'=>new DateTime,
 
                     ),
                     DB::table('psms_standard_description')->insert(
                         array(
                             'id'=>'4',
-                            'name'=>'emergency',
+                            'name'=>'emergency vehicle',
                             'created_at'=>new DateTime,
 
                         )

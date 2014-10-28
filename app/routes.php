@@ -106,7 +106,9 @@ Route::get('data/{id}', array('uses' => 'OffenseController@dataSpecific'));
 //*******************************************************//
 //********************Reports***************************//
 //*******************************************************//
-Route::get('reports',array('uses'=>'GeneralController@index'));
+Route::get('offence_reports',array('uses'=>'GeneralController@index'));
+
+Route::get('accident_reports',array('uses'=>'AccidentReportController@index'));
 
 Route::post('reports/download',array('uses'=>'GeneralController@excelDownload'));
 

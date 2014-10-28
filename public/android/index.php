@@ -230,12 +230,55 @@ else if ($tag == 'history') {
                 echo json_encode($response);
             }
         
-    } else {
-         $response["error"] = 3;
-         $response["error_msg"] = "JSON ERROR";
-        echo json_encode($response);
+}
+else if ($tag == 'person') {
+
+        $acc_data_id=1;
+        $name= $_POST['person_name'];
+		$gender = $_POST['person_gender'];
+		$DOB= $_POST['dob'];
+		$physical_address= $_POST['physical_address'];
+		$address= $_POST['address_box'];
+		$national_id_nationality= $_POST['nationality_id'];
+		$phone_number= $_POST['phone_no'];
+		$drugs_alcohol_percent= $_POST['alcohol'];
+		$helmet_seat_belt_use= $_POST['seat_helmet'];
+		$casualty= $_POST['seat_helmet'];
+		$status= $_POST['status'];
+		$vehicle_number= $_POST['vehicle_no'];
+		$accident_data_id= $acc_data_id;
+
+            // store offence
+    if ($name==""&&$DOB==""&&$physical_address==""&&$address==""&&$national_id_nationality==""&&$phone_number==""&&$drugs_alcohol_percent=="") {
+        $person="";
+    }else{
+        $person = $db->store_person($name,$gender,$DOB,$physical_address,$address,$national_id_nationality,$phone_number,$drugs_alcohol_percent,$helmet_seat_belt_use,$casualty,$status,$vehicle_number,$accident_data_id );
+
     }
-} else {
+
+
+			
+            if ($person) {
+                // offence stored successfully
+            $response["success"] = 1;
+            $response["Person"]["name"] = $person["name"];
+            $response["Person"]["gender"] = $person["gender"];
+            $response["Person"]["gender"] = $person["gender"];
+            $response["Person"]["physical_address"] = $person["physical_address"];
+            $response["Person"]["address"] = $person["address"];
+            $response["Person"]["national_id_nationality"] = $person["national_id_nationality"];
+		    $response["Person"]["phone_number"] = $person["phone_number"];
+            $response["Person"]["drugs_alcohol_percent"] = $person["drugs_alcohol_percent"];
+            $response["Person"]["helmet_seat_belt_use"] = $person["helmet_seat_belt_use"];
+               echo json_encode($response);
+            } else {
+                // user failed to store
+                $response["error"] = 1;
+                $response["error_msg"] = "JSON Error occurred in sending data";
+                echo json_encode($response);
+            }
+        
+    }
+}else {
     echo "submitting offence API";
 }
-?>

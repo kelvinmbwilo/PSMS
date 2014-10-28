@@ -64,6 +64,253 @@ public function forgotPassword($rankNo, $newpassword){
             return false;
         }
     }
+
+     /*
+     * Adding new accident data to mysql database
+     * returns accident_data id
+     */
+    public function store_accident_data($registration_number, $driver_id_1, $driver_id_2, $car_id_1,$car_id_2,$road_type_id,$damage_id,$street_condition_id,$junction_type_id,$vehicle_defect_id,$violation_id, $category_id, $other_damage_id) {
+
+        $result = mysql_query("INSERT INTO psms_accident_data(registration_number,driver_id_1,driver_id_2,car_id_1,car_id_2,road_type_id,damage_id,street_condition_id,junction_type_id,vehicle_defect_id,violation_id, category_id, other_damage_id)
+                                              VALUES('$registration_number', '$driver_id_1', '$driver_id_2','$car_id_1','$car_id_2','$road_type_id','$damage_id','$street_condition_id', '$junction_type_id', '$vehicle_defect_id','$violation_id','$category_id','$other_damage_id',NOW())");
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+
+	       //$res=mysql_fetch_array($result);
+			return $uid; //retuirns the id of the reported accident
+        } else {
+            return false;
+        }
+    }
+
+     /*
+     * Adding new accident_description to mysql database
+     * returns accident_description id
+     */
+    public function store_accident_description($accident_site_condition, $direction, $image_path) {
+
+        $result = mysql_query("INSERT INTO psms_accident_description( accident_site_condition, direction, image_path,created_at ) VALUES('$accident_site_condition', '$direction', '$image_path',  NOW())");
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+			return $uid;
+        } else {
+            return false;
+        }
+    }
+
+     /*
+     * Adding new accident_location to mysql database
+     * returns accident_location id
+     */
+    public function store_accident_location($accident_data_id, $area,$district_id,$region_id,$road_name,$road_number,$road_kilometer_mark,$intersection_name,$intersection_number,$intersection_kilometer_mark) {
+
+        $result = mysql_query("INSERT INTO psms_accident_location( accident_data_id,area,district_id,region_idroad_name,road_number,road_kilometer_mark,intersection_nameintersection_number,intersection_kilometer_mark,created_at)
+         VALUES('$accident_data_id','$area','$district_id','$region_id','$road_name','$road_number','$road_kilometer_mark','$intersection_name','$intersection_number','$intersection_kilometer_mark' NOW())");
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    }
+
+     /*
+     * Adding new category to mysql database
+     * returns category id
+     */
+    public function store_category($category_name,$category_number,$description) {
+
+        $result = mysql_query("INSERT INTO psms_category(category_name,category_number ,description ,created_at ) VALUES('$category_name','$category_number','$description', NOW())");
+        // check for successful store
+
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    }
+
+    /*
+     * Adding new damage to mysql database
+     * returns damage id
+     */
+    public function store_damage($vehicle,$vehicle_total,$infrastructure,$rescue_cost,$image_path ) {
+
+        $result = mysql_query("INSERT INTO psms_damage(vehicle ,vehicle_total,infrastructure,rescue_cost,image_path,created_at ) VALUES(,'$vehicle','$vehicle_total','$infrastructure','$rescue_cost','$image_path',NOW())");
+        // check for successful storerescue_cost
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    }
+
+     /*
+     * Adding new junction_type to mysql database
+     * returns junction_type id
+     */
+    public function store_junction_type($junction_structure,$junction_control ) {
+
+        $result = mysql_query("INSERT INTO psms_junction_type( junction_structure ,junction_control,created_at) VALUES('$junction_structure','$junction_control', NOW())");
+        // check for successful store
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    }
+
+    /*
+     * Adding new other_damage to mysql database
+     * returns other_damage id
+     */
+    public function store_other_damage($description,$name_of_property_owner,$cost_of_repair ) {
+
+        $result = mysql_query("INSERT INTO psms_other_damage(description ,name_of_property_owner,cost_of_repair,created_at) VALUES('$description','$name_of_property_owner','$cost_of_repair', NOW())");
+        // check for successful store
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    }
+    /*
+     * Adding new person to mysql database
+     * returns person id
+     */
+    public function store_person($name1,$gender,$DOB,$physical_address,$address,$national_id_nationality,$phone_number,$drugs_alcohol_percent,$helmet_seat_belt_use,$casualty,$status,$vehicle_number,$accident_data_id ) {
+
+  $result = mysql_query("INSERT INTO psms_person(gender,DOB,physical_address,name,address,national_id_nationality,phone_number,drugs_alcohol_percent,helmet_seat_belt_use,casualty,status,vehicle_number,accident_data_id,created_at) VALUES
+        ('$gender','$DOB','$physical_address','$name1','$address','$national_id_nationality','$phone_number','$drugs_alcohol_percent','$helmet_seat_belt_use','$casualty','$status','$vehicle_number','$accident_data_id',NOW())");
+
+        // check for successful store
+        if ($result) {
+            // get user details
+
+            $uid = mysql_insert_id(); // last inserted id
+             $result = mysql_query("SELECT * FROM psms_person WHERE id = $uid");
+            // return user details
+            return mysql_fetch_array($result);
+
+        } else {
+            return false;
+        }
+    } /*
+     * Adding new road _type to mysql database
+     * returns road _type id
+     */
+    public function store_road_type($road_class ,$surface_type,$road_structure,$road_status ) {
+
+
+
+        $result = mysql_query("INSERT INTO psms_road _type(road_class,surface_type,road_structure,road_status,created_at) VALUES('$road_class','$surface_type','$road_structure','$road_status', NOW())");
+        // check for successful store
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    }
+     /*
+     * Adding new person to mysql database
+     * returns person id
+     */
+    public function store_street_condition($road_surface,$light,$weather,$control ) {
+
+        $result = mysql_query("INSERT INTO psms_street_condition(road_surface,light,weather,control,created_at) VALUES('$road_surface','$light','$weather','$control', NOW())");
+        // check for successful store
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    } /*
+     * Adding new vehicle_defects to mysql database
+     * returns vehicle_defects id
+     */
+    public function store_vehicle_defects($vehicle_1,$vehicle_2,$accident_data_id ) {
+
+        $result = mysql_query("INSERT INTO psms_vehicle_defects(vehicle_1,vehicle_2,accident_data_id,created_at) VALUES('$vehicle_1','$vehicle_2','$accident_data_id', NOW())");
+        // check for successful store
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    } /*
+     * Adding new violation to mysql database
+     * returns violation id
+     */
+    public function store_violation($vehicle_1,$vehicle_2,$accident_data_id ) {
+
+        $result = mysql_query("INSERT INTO psms_violation(vehicle_1,vehicle_2,accident_data_id,created_at) VALUES('$vehicle_1','$vehicle_2','$accident_data_id', NOW())");
+        // check for successful store
+        // check for successful store
+        if ($result) {
+            // get user details
+            $uid = mysql_insert_id(); // last inserted id
+            // $result = mysql_query("SELECT * FROM psms_data WHERE id = $uid");
+            // return user details
+            // $res=mysql_fetch_array($result);
+            return $uid;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Verifies user by rankNo and password
      */

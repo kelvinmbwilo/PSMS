@@ -8,8 +8,5 @@
 <h2>Recently Reported</h2>
 <address>
     <strong>Bagamoyo Rd, Kinondoni</strong><br>
-    {{ $mLast->car->color ." ".$mLast->car->type ." ".$mLast->car->make}}<br>
-    {{ $mLast->license }}<br>
-    {{ $mLast->offence }}<br>
-    <abbr>Time:</abbr> {{ substr($mLast->created_at, 10, 19) }}
+
 </address>

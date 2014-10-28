@@ -1,6 +1,6 @@
 <?php
 
-class GeneralController extends \BaseController {
+class AccidentReportController extends \BaseController {
 
     /**
      * Display a listing of the resource.
@@ -9,7 +9,7 @@ class GeneralController extends \BaseController {
      */
     public function index()
     {
-        return View::make("reports.offence_reports");
+        return View::make("reports.accident_reports");
     }
 
     public function processQuery($offencequery){
@@ -186,13 +186,13 @@ class GeneralController extends \BaseController {
                 <tr>
                     <td><?php
                         if(Input::get('show') == 'Regions'){
-                        echo Region::find($keys)->region;
+                            echo Region::find($keys)->region;
                         }elseif(Input::get('show') == 'Districts' ){
-                        echo District::find($keys)->district;
+                            echo District::find($keys)->district;
                         }else{
-                        echo $keys;
+                            echo $keys;
                         }
-                    ?></td>
+                        ?></td>
                     <?php
                     foreach($cols as $colsval){
                         echo "<td>$colsval</td>";
@@ -1096,47 +1096,47 @@ class GeneralController extends \BaseController {
             ->setCategory($title);
 
         ?>
-                <?php
+        <?php
 
         $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A1', Input::get('show'));
 
         $k=0;
         $latter = array("B","C","D","E","F","G","H","I","J","K","L","M");
-                foreach($row as $header){
-                    $objPHPExcel->setActiveSheetIndex(0)
-                        ->setCellValue($latter[$k]."1", $header);
-                   $k++;
-                }
-                ?>
-            <?php
+        foreach($row as $header){
+            $objPHPExcel->setActiveSheetIndex(0)
+                ->setCellValue($latter[$k]."1", $header);
+            $k++;
+        }
+        ?>
+        <?php
         $j=2;
 
         foreach($column as $keys => $cols){ ?>
-                <tr>
-                    <td><?php
-                        if(Input::get('show') == 'Regions'){
-                            $objPHPExcel->setActiveSheetIndex(0)
-                                ->setCellValue('A'.$j, Region::find($keys)->region);
-                        }elseif(Input::get('show') == 'Districts' ){
-                            $objPHPExcel->setActiveSheetIndex(0)
-                            ->setCellValue('A'.$j, District::find($keys)->district);
-                        }else{
-                            $objPHPExcel->setActiveSheetIndex(0)
-                            ->setCellValue('A'.$j, $keys);
-                        }
-                        ?></td>
-                    <?php
-                    $m=0;
-                    foreach($cols as $colsval){
+            <tr>
+                <td><?php
+                    if(Input::get('show') == 'Regions'){
                         $objPHPExcel->setActiveSheetIndex(0)
-                            ->setCellValue($latter[$m].$j, $colsval);
-                        $k++;
+                            ->setCellValue('A'.$j, Region::find($keys)->region);
+                    }elseif(Input::get('show') == 'Districts' ){
+                        $objPHPExcel->setActiveSheetIndex(0)
+                            ->setCellValue('A'.$j, District::find($keys)->district);
+                    }else{
+                        $objPHPExcel->setActiveSheetIndex(0)
+                            ->setCellValue('A'.$j, $keys);
                     }
-                    ?>
-                </tr>
+                    ?></td>
+                <?php
+                $m=0;
+                foreach($cols as $colsval){
+                    $objPHPExcel->setActiveSheetIndex(0)
+                        ->setCellValue($latter[$m].$j, $colsval);
+                    $k++;
+                }
+                ?>
+            </tr>
             <?php
-        $j++;} ?>
+            $j++;} ?>
 
         <?php
 

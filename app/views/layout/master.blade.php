@@ -174,8 +174,13 @@
             </li>
 
             <li>
-                <a href="{{ url('reports') }}">
-                    <i class="fa fa-th"></i> <span>Reports</span>
+                <a href="{{ url('offence_reports') }}">
+                    <i class="fa fa-th"></i> <span>Offence Reports</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('accident_reports') }}">
+                    <i class="fa fa-th"></i> <span>Accident Reports</span>
                 </a>
             </li>
         </ul>

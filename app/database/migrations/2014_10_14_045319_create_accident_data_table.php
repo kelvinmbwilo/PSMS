@@ -24,7 +24,7 @@ class CreateAccidentDataTable extends Migration {
 			$table->integer('damage_id');
 			$table->integer('street_condition_id');
 			$table->integer('junction_type_id');
-			$table->integer('vehicle-defects_id');
+			$table->integer('vehicle_defects_id');
 			$table->integer('violation_id');
 			$table->integer('category_id');
 			$table->integer('other_damage_id');
