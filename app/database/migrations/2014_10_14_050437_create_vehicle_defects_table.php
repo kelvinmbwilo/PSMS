@@ -15,8 +15,8 @@ class CreateVehicleDefectsTable extends Migration {
 		Schema::create('psms_vehicle_defects', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('vehicle_1');
-            $table->string('vehicle_2');
+            $table->string('vehicle_number');
+            $table->string('defect');
             $table->string('accident_data_id');
 			$table->timestamps();
 		});
