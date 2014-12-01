@@ -88,6 +88,7 @@ Reports
     <button type="submit" class="col-md-2 btn btn-default btn-sm" id="excel"><img src="{{ asset('cvs.jpg') }}" style="height: 20px;width: 20px" /> Excel</button>
 </div>
 {{ Form::close() }}
+
 <div id="chartarea" class="col-xs-12" style="margin-top: 10px">
     <script>
         $(document).ready(function (){

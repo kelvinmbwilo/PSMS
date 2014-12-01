@@ -1,8 +1,9 @@
 <?php
-session_start();
 /**
  PHP API for Login, Register, Changepassword, Resetpassword Requests and for Email Notifications.
  **/
+ 
+ 
 if (isset($_POST['tag']) && $_POST['tag'] != '') {
     // Get tag
     $tag = $_POST['tag'];
@@ -31,28 +32,24 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             // echo json with success = 1
             $response["success"] = 1;
             $response["user"]["rankNo"] = $user["rankNo"];
-       
             $response["user"]["fullName"] = $user["fullName"];
             $response["user"]["station"] = $user["station"];
-          
             $response["user"]["created_at"] = $user["created_at"];
             echo json_encode($response);
         } else {
+            
             // user not found
             // echo json with error = 1
             $response["error"] = 1;
             $response["error_msg"] = "Incorrect username or password!";
             echo json_encode($response);
+            
         }
     }else if ($tag == 'verification') {
         // Request type is car and license verification
         $license = $_POST['license'];
         $plateNumber = $_POST['plateNumber'];
-    //the email will be used in querying
-     //   session_regenerate_id();
-	   // $_SESSION['email'] = $_POST['email'];
-	    //session_write_close();			
-        // check for user
+        
         $car = $db->getCar($plateNumber);
         $person =$db->getLicence($license);
         if ($car != false) {
@@ -83,7 +80,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             $response["detail"]["status"] = $person["status"];
             $response["detail"]["created_at"] = $person["created_at"];
             echo json_encode($response);
-        }else {
+        }
+        else {
             // user not found
             // echo json with error = 2
             $response["error"] = 2;
@@ -96,6 +94,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 			
 		 }
     }
+    
+    
   else if ($tag == 'chgpass'){
   $oldpassword = $_POST['oldpas'];
   $newpassword = $_POST['newpas'];
@@ -105,8 +105,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
 
          $subject = "Change Password Notification";
          $message = "Hello User,nnYour Password is sucessfully changed.nnRegards,nAdmin.";
-          $from = "pnyairema@gmail.com";
-          $headers = "From:" . $from;
+         $from = "pnyairema@gmail.com";
+         $headers = "From:" . $from;
  if($userToChange)  {
  $rankNo=$userToChange['rankNo'];
  $user =$db->forgotPassword($rankNo,$hash);
@@ -130,7 +130,9 @@ echo json_encode($response);
 }
 }
 else if ($tag == 'forpass'){
+    
 $forgotpassword = $_POST['forgotpassword'];
+
 $subject = "Password Recovery";
          $message = "Hello User,nnYour Password resetting requesting has been sent.  . wait for an email from the System administrator or contact me via 0712763363.nnRegards,nAdmin.";
           $from = "pnyairema@gmail.com";
@@ -150,6 +152,7 @@ $subject = "Password Recovery";
              echo json_encode($response);
 }
 }
+
 else if ($tag == 'history') {
         // Request type is Register new user
         $license = $_POST['license'];
@@ -177,7 +180,8 @@ else if ($tag == 'history') {
                 echo json_encode($response);
             }
         
-    }else if ($tag == 'register') {
+    }
+    else if ($tag == 'register') {
         // Request type is Register new user
         $license = $_POST['license'];
         $plateNumber = $_POST['plateNumber'];
@@ -231,16 +235,11 @@ else if ($tag == 'person') {
 		$vehicle_number= $_POST['vehicle_no'];
 		$accident_data_id= $_POST['reg_id'];
 
-            // store offence
-    if ($name==""&&$DOB==""&&$physical_address==""&&$address==""&&$national_id_nationality==""&&$phone_number==""&&$drugs_alcohol_percent=="") {
-        $person="";
-    }else{
+            // store person
+    
         $person = $db->store_person($name,$gender,$DOB,$physical_address,$address,$national_id_nationality,$phone_number,$drugs_alcohol_percent,$helmet_seat_belt_use,$casualty,$status,$vehicle_number,$accident_data_id );
 
-    }
-
-
-			
+    	
             if ($person) {
                 // offence stored successfully
             $response["success"] = 1;
@@ -264,10 +263,15 @@ else if ($tag == 'person') {
         
     }
 
+//store accident location
 
-else if ($tag == 'accident_location') {
+else if ($tag == 'location') {
     // Request type is Register new user
-    $area = $_POST['accident_area'];
+    $area = $_POST['area'];
+    $date = $_POST['acc_date'];
+    $time = $_POST['acc_time'];
+    $district = $_POST['district'];
+    $city = $_POST['region'];
     $roadName = $_POST['road_name'];
     $road_no = $_POST['road_no'];
     $road_mark = $_POST['road_kilo_mark'];
@@ -275,18 +279,136 @@ else if ($tag == 'accident_location') {
     $intersection_no = $_POST['intersection_no'];
     $intersection_mark = $_POST['intersection_kilo_mark'];
 
-    //Store Location
-    $location = $db->storeLocation($area,$roadName,$road_no,$road_mark,$intersectionName,$intersection_no,$intersection_mark);
+       //Store Location
+    $location = $db->storeLocation($area,$date,$time,$district,$city,$roadName,$road_no,$road_mark,$intersectionName,$intersection_no,$intersection_mark);
+
+
     if ($location) {
         //location Stored Successfully
         $response["success"] = 1;
         $response["location"]["area"] = $location["area"];
-        $response["location"]["roadName"] = $location["roadName"];
-        $response["location"]["road_no"] = $location["road_no"];
-        $response["location"]["road_mark"] = $location["road_mark"];
-        $response["location"]["intersectionName"] = $location["intersectionName"];
-        $response["location"]["intersection_no"] = $location["intersection_no"];
-        $response["location"]["intersection_mark"] = $location["intersection_mark"];
+        $response["location"]["date"] = $location["date"];
+        $response["location"]["time"] = $location["time"];
+        $response["location"]["district"] = $location["district"];
+        $response["location"]["region"] = $location["region"];
+        $response["location"]["road_name"] = $location["road_name"];
+        $response["location"]["road_number"] = $location["road_number"];
+        $response["location"]["road_kilometer_mark"] = $location["road_kilometer_mark"];
+        $response["location"]["intersection_name"] = $location["intersection_name"];
+        $response["location"]["intersection_number"] = $location["intersection_number"];
+        $response["location"]["intersection_kilometer_mark"] = $location["intersection_kilometer_mark"];
+        echo json_encode($response);
+
+
+    }
+    else {
+        // Location failed to store
+        $response["error"] = 1;
+        $response["error_msg"] = "JSON Error occured.";
+        echo json_encode($response);
+    }
+}
+
+else if ($tag == 'driver') {
+    
+    // Request type is Register new user
+    $surname = $_POST['surname'];
+    $other_names = $_POST['other_names'];
+    $physical_address = $_POST['physical_address'];
+    $address_box = $_POST['address_box'];
+    $national_id = $_POST['national_id'];
+    $phone_no = $_POST['phone_no'];
+    $gender = $_POST['gender'];
+    $dob = $_POST['dob'];
+    $nationality= $_POST['nationality'];
+    $licence = $_POST['driving_licence'];
+    $occupation = $_POST['occupation'];
+    $alcohol = $_POST['alcohol'];
+    $drugs = $_POST['drugs'];
+    $phone_use = $_POST['phone_use'];
+    $seat_helmet = $_POST['seat_helmet'];
+
+ // store driver
+    $driver = $db->storeDriver($surname, $other_names, $physical_address, $address_box, $national_id,$phone_no,$gender,$dob,$licence,$nationality,$occupation,$drugs,$alcohol,$phone_use);
+   
+   
+    if ($driver) {
+        // user stored successfully
+        $response["success"] = 1;
+        $response["driver"]["surname"] = $driver["surname"];
+        $response["driver"]["other_name"] = $driver["other_name"];
+        $response["driver"]["physical_address"] = $driver["physical_address"];
+        $response["driver"]["address_box"] = $driver["address"];
+        $response["driver"]["national_id"] = $driver["national_id"];
+        $response["driver"]["phone_no"] = $driver["phone_number"];
+        $response["driver"]["gender"] = $driver["gender"];
+        $response["driver"]["dob"] = $driver["DOB"];
+        $response["driver"]["nationality"] = $driver["nationality"];
+        $response["driver"]["driving_licence"] = $driver["driving_license"];
+        $response["driver"]["occupation"] = $driver["occupation"];
+        $response["driver"]["alcohol"] = $driver["alcohol_percent"];
+        $response["driver"]["drugs"] = $driver["drugs"];
+        $response["driver"]["phone_use"] = $driver["phone_use"];
+        //$response["driver"]["seat_helmet"] = $driver["helmet/seat_belt_use"];
+
+        echo json_encode($response);
+    } else {
+        // user failed to store
+        $response["error"] = 1;
+        $response["error_msg"] = "JSON Error occured";
+        echo json_encode($response);
+    }
+}
+
+
+
+else if ($tag == 'vehicle') {
+    // Request type is Register new vehicle
+    $type = $_POST['vehicle_type'];
+    $reg_no = $_POST['vehicle_reg_no'];
+ 
+
+    $vehicle = $db->storeVehicle($type, $reg_no); 
+
+     
+
+    if ($vehicle) {
+        // user stored successfully
+        $response["success"] = 1;
+        $response["vehicle"]["type"] = $vehicle["type"];
+        $response["vehicle"]["registration_number"] = $vehicle["registration_number"];
+        echo json_encode($response);
+
+    } else {
+        // user failed to store
+        $response["error"] = 1;
+        $response["error_msg"] = "JSON Error occured.";
+        echo json_encode($response);
+    }
+}
+
+
+
+else if ($tag == 'insurance') {
+    // Request type is Register new user
+    $name = $_POST['company_name'];
+    $type = $_POST['insurance_type'];
+    $phone_no = $_POST['insurance_phone_no'];
+    $policy_no = $_POST['policy_no'];
+    $period = $_POST['expiration_period'];
+    $costs = $_POST['estimated_repair_costs'];
+
+$insurance = $db->storeInsurance($name,$type,$phone_no,$policy_no,$period,$costs);
+
+    if ($insurance) {
+        //insurance Stored Successfully
+        $response["success"] = 1;
+        $response["insurance"]["name"] = $insurance["name"];
+        $response["insurance"]["type"] = $insurance["type"];
+        $response["insurance"]["phone_number"] = $insurance["phone_number"];
+        $response["insurance"]["policy_number"] = $insurance["policy_number"];
+        $response["insurance"]["policy_number"] = $insurance["expiration_date"];
+        $response["insurance"]["estimated_repair_amount"] = $insurance["estimated_repair_amount"];
         echo json_encode($response);
 
 
@@ -297,8 +419,38 @@ else if ($tag == 'accident_location') {
         $response["error_msg"] = "JSON Error occured.";
         echo json_encode($response);
     }
+}
 
-}else if ($tag == 'defects') {
+else if ($tag == 'damage') {
+    // Request 
+    $vehicle = $_POST['vehicle'];
+    $vehicle_total = $_POST['vehicle_total'];
+    $infrastructure = $_POST['infrastructure'];
+    $rescue_costs = $_POST['rescue_costs'];
+
+    // store user
+    $damage = $db->storeDamage($vehicle, $vehicle_total, $infrastructure, $rescue_costs);
+
+
+    if ($damage) {
+        // damage stored successfully
+        $response["success"] = 1;
+        $response["damage"]["vehicle"] = $damage["vehicle"];
+        $response["damage"]["vehicle_total"] = $damage["vehicle_total"];
+        $response["damage"]["infrastructure"] = $damage["infrastructure"];
+        $response["damage"]["rescue_costs"] = $damage["rescue_cost"];
+        echo json_encode($response);
+
+    } else {
+        // user failed to store
+        $response["error"] = 1;
+        $response["error_msg"] = "JSON Error occured in Registartion";
+        echo json_encode($response);
+    }
+
+}
+
+else if ($tag == 'defects') {
     // Request type is Register new user
     $number = $_POST['number'];
     $defect = $_POST['defect'];
@@ -435,135 +587,6 @@ else if ($tag == 'accident_location') {
 
 }
 
-else if ($tag == 'vehicle') {
-    // Request type is Register new vehicle
-    $vehicle_type = $_POST['vehicle_type'];
-    $vehicle_reg_no = $_POST['vehicle_reg_no'];
-
-    // store vehicle
-    $vehicle = $db->storeVehicle($vehicle_type, $vehicle_reg);
-    if ($user) {
-        // user stored successfully
-        $response["success"] = 1;
-        $response["vehicle"]["vehicle_type"] = $vehicle["vehicle_type"];
-        $response["vehicle"]["vehicle_reg_no"] = $vehicle["vehicle_reg_no"];
-        echo json_encode($response);
-
-    } else {
-        // user failed to store
-        $response["error"] = 1;
-        $response["error_msg"] = "JSON Error occured.";
-        echo json_encode($response);
-    }
-}
-
-
-else if ($tag == 'driver') {
-    // Request type is Register new user
-    $surname = $_POST['surname'];
-    $other_names = $_POST['other_name'];
-    $physical_address = $_POST['physical_address'];
-    $address_box = $_POST['address_box'];
-    $national_id = $_POST['national_id'];
-    $phone_no = $_POST['phone_no'];
-    $gender = $_POST['gender'];
-    $dob = $_POST['dob'];
-    $nationality= $_POST['nationality'];
-    $driving_licence = $_POST['driving_licence'];
-    $occupation = $_POST['occupation'];
-    $alcohol = $_POST['alcohol'];
-    $drugs = $_POST['drugs'];
-    $phone_use = $_POST['phone_use'];
-    $seat_helmet = $_POST['seat_helmet'];
-
-
-    // store driver
-    $driver = $db->storeDriver($surname, $other_names, $physical_address, $address_box, $national_id,$phone_no,$gender,$dob,$nationality,$alcohol,$drugs,$phone_use,$seat_helmet);
-    if ($driver) {
-        // user stored successfully
-        $response["success"] = 1;
-        $response["driver"]["surname"] = $driver["surname"];
-        $response["driver"]["other_name"] = $driver["other_name"];
-        $response["driver"]["physical_address"] = $driver["physical_address"];
-        $response["driver"]["address_box"] = $driver["address_box"];
-        $response["driver"]["national_id"] = $driver["national_id"];
-        $response["driver"]["phone_no"] = $driver["phone_no"];
-        $response["driver"]["gender"] = $driver["gender"];
-        $response["driver"]["dob"] = $driver["dob"];
-        $response["driver"]["nationality"] = $driver["nationality"];
-        $response["driver"]["driving_licence"] = $driver["driving_licence"];
-        $response["driver"]["occupation"] = $driver["occupation"];
-        $response["driver"]["alcohol"] = $driver["alcoho"];
-        $response["driver"]["drugs"] = $driver["drugs"];
-        $response["driver"]["phone_use"] = $driver["phone_use"];
-        $response["driver"]["seat_helmet"] = $driver["helmet/seat_helmet"];
-
-        echo json_encode($response);
-    } else {
-        // user failed to store
-        $response["error"] = 1;
-        $response["error_msg"] = "JSON Error occured in Registartion";
-        echo json_encode($response);
-    }
-}
-
-
-else if ($tag == 'insurance') {
-    // Request type is Register new user
-    $insurance_company_name = $_POST['company_name'];
-    $insurance_type = $_POST['insurance_type'];
-    $insurance_phone_no = $_POST['insurance_phone_no'];
-    $policy_no = $_POST['policy_no'];
-    $expiration_period= $_POST['expiration_period'];
-    $estimated_repair_costs = $_POST['estimated_repair_costs'];
-
-    // store insurance
-    $insurance = $db->storeInsurance($insurance_company_name, $insurance_type, $insurance_phone_no, $policy_no, $expiration_period,$estimated_repair_costs);
-    if ($insurance) {
-        // user stored successfully
-        $response["success"] = 1;
-        $response["insurance"]["insurance_company_name"] = $insurance["insurance_company_name"];
-        $response["insurance"]["insurance_type"] = $insurance["insurance_type"];
-        $response["insurance"]["insurance_phone_no"] = $insurance["insurance_phone_no"];
-        $response["insurance"]["policy_no"] = $insurance["policy_no"];
-        $response["insurance"]["expiration_period"] = $insurance["expiration_period"];
-        $response["insurance"]["estimated_repair_costs"] = $insurance["estimated_repair_costs"];
-
-    } else {
-        // user failed to store
-        $response["error"] = 1;
-        $response["error_msg"] = "JSON Error occured in Registartion";
-        echo json_encode($response);
-    }
-
-}
-
-else if ($tag == 'damage') {
-    // Request type is Register new user
-    $vehicle = $_POST['vehicle'];
-    $vehicle_total = $_POST['vehicle_total'];
-    $infrastructure = $_POST['infrastructure'];
-    $rescue_costs = $_POST['rescue_costs'];
-
-
-    // store user
-    $damage = $db->storeDamage($vehicle, $vehicle_total, $infrastructure, $rescue_costs);
-    if ($damage) {
-        // damage stored successfully
-        $response["success"] = 1;
-        $response["user"]["vehicle"] = $damage["vehicle"];
-        $response["user"]["vehicle_total"] = $damage["vehicle_total"];
-        $response["user"]["infrastructure"] = $damage["infrastructure"];
-        $response["user"]["rescue_costs"] = $damage["rescue_cost"];;
-
-    } else {
-        // user failed to store
-        $response["error"] = 1;
-        $response["error_msg"] = "JSON Error occured in Registartion";
-        echo json_encode($response);
-    }
-
-}
 
 else if ($tag == 'road_type') {
     // Request type is Register new user
@@ -634,24 +657,10 @@ else if ($tag == 'junction_type') {
     $year= $_POST['year'];
     $phone = $_POST['phone'];
     $subject = "Registration";
-    $message = "Hello $fname,nnYou have sucessfully registered to our service.nnRegards,nAdmin.";
-    $from = "pnyairema@gmail.com";
-    $headers = "From:" . $from;
-    // check if user is already existed
-    if ($db->isUserExisted($email)) {
-        // user is already existed - error response
-        $response["error"] = 2;
-        $response["error_msg"] = "User already existed";
-        echo json_encode($response);
-    }
-    else if(!$db->validEmail($email)){
-        $response["error"] = 3;
-        $response["error_msg"] = "Invalid Email Id";
-        echo json_encode($response);
-    }
-    else {
+  
         // store user
         $user = $db->storeUser($fname, $lname, $email, $uname, $password,$plate,$model,$color,$year,$phone);
+        
         if ($user) {
             // user stored successfully
             $response["success"] = 1;
@@ -674,8 +683,11 @@ else if ($tag == 'junction_type') {
             $response["error_msg"] = "JSON Error occured in Registartion";
             echo json_encode($response);
         }
-    }
+    
 }
-}else {
+}
+
+else {
     echo "submitting offence API";
 }
+?>

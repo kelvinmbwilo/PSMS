@@ -32,12 +32,17 @@ Route::get('map', function()
     return View::make('map');
 });
 
+Route::get('passenger', 'ReportController@passenger');
+
+Route::get('new_driver', 'ReportController@new_driver');
+
 Route::get('recently', function()
 {
     return View::make('recently');
 });
 
-
+Route::get('accident' ,'ReportController@index');
+    
 
 Route::resource('dashboard' , 'DashboardController');
 
