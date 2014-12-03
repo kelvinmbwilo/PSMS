@@ -161,72 +161,128 @@ Report Accident
                                             <label>ACCIDENT TYPE</label>
                                             <select name="acc_type" class="form-control">
                                                 <option value="single">Single vehicle accident</option>
-                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
-                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
+                                                <option value="same travel direction ">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
+                                                <option value="opposite travel direction">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
                                                 <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
-                                                <option value="50">Collision at a junction between two or more participants</option>
-                                                <option value="60" >Accident w. parked vehicles</option>
-                                                <option value="70">Pedestrian, animals and other accidents</option>
+                                                <option value="Collision at a junction ">Collision at a junction between two or more participants</option>
+                                                <option value="parked vehicles" >Accident with parked vehicles</option>
+                                                <option value="other accidents">Pedestrian, animals and other accidents</option>
                                         
                                             </select>
                                         </div>
-                                        
-                            
-                                 <!-- select -->
+                 
+
+                               <!-- select -->
                                         <div class="form-group">
                                             <label>JUNCTION TYPE</label>
-                                            <select name="acc_type" class="form-control">
-                                                <option value="single">Single vehicle accident</option>
-                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
-                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
-                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
-                                                <option value="50">Collision at a junction between two or more participants</option>
-                                                <option value="60" >Accident w. parked vehicles</option>
-                                                <option value="70">Pedestrian, animals and other accidents</option>
-                                        
+                                            <select name="junc_type" class="form-control">
+                                                <option value="Crossing Roads">Crossing Roads</option>
+                                                <option value="Round About"></option></option>
+                                                <option value="T Junction">T Junction</option>
+                                                <option value="Y Junction">Y Junction</option>
+                                                <option value="Staggered Junction">Staggered Junction</option>
+                                                <option value="Rail Cros no Sign" >Rail Cros no Sign</option>
+                                                <option value="Pedestrian Cross">Pedestrian Cross</option>
+                                                <option value="None">None</option>
                                             </select>
                                         </div>
+                                     
+                                     
+                                      <!-- select -->
+                                        <div class="form-group">
+                                            <label>JUNCTION CONTROL</label>
+                                            <select name="junc_control" class="form-control">
+                                                <option value="Uncontrolled">Uncontrolled</option>
+                                                <option value="Police Officer">Police Officer</option>
+                                                <option value="Traffic Signs"></option>
+                                                <option value="Traffic Light">Traffic Light</option>
+                                                <option value="Flashing Signal" >Flashing Signal</option>
+                                                <option value="None">None</option>
                                         
+                                            </select>
+                                        </div> 
+                                       
                                          <!-- select -->
                                         <div class="form-group">
                                             <label>ROAD TYPE</label>
-                                            <select name="acc_type" class="form-control">
-                                                <option value="single">Single vehicle accident</option>
-                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
-                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
-                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
-                                                <option value="50">Collision at a junction between two or more participants</option>
-                                                <option value="60" >Accident w. parked vehicles</option>
+                                            <select name="road_type" class="form-control">
+                                                <option value="Trunk ">Trunk Roads</option>
+                                                <option value="Regional ">Regional Roads</option>
+                                                <option value="District ">District Roads)</option>
+                                                <option value="City ">City Roads</option>
+                                                <option value="Rural ">Rural Roads</option>
+                                                <option value="Bridge" >Bridge</option>
                                                 <option value="70">Pedestrian, animals and other accidents</option>
                                         
                                             </select>
                                         </div>
-                                        
-                                         <!-- select -->
+                                   
+                                   <h5>STREET CONDITION</h5>
+                                   <div class="col-md-3" >
+                                   <!-- select -->
                                         <div class="form-group">
-                                            <label>STREET CONDITION</label>
-                                            <select name="acc_type" class="form-control">
-                                                <option value="single">Single vehicle accident</option>
-                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
-                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
-                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
-                                                <option value="50">Collision at a junction between two or more participants</option>
-                                                <option value="60" >Accident w. parked vehicles</option>
-                                                <option value="70">Pedestrian, animals and other accidents</option>
-                                        
+                                            <label>ROAD SURFACE</label>
+                                            <select name="road_surface" class="form-control">
+                                                <option value="Dry">Dry</option>
+                                                <option value="Wet">Wet</option>
+                                                <option value="Rain">Rain</option>
+                                                <option value="Water">Water</option>
+                                                <option value="Muddy">Muddy</option>
+                                                <option value="Debris" >Debris</option>
                                             </select>
                                         </div>
-                            
- <div class="pull-left" style="margin-left:5px; margin-top:20px;" >
-<button type="submit" class="btn btn-primary">Save and Next</button>
-</div>       
+                                   </div>  
+                                   
+                                      <div class="col-md-3" >
+                                   <!-- select -->
+                                        <div class="form-group">
+                                            <label>LIGHT</label>
+                                            <select name="weather" class="form-control">
+                                                <option value="Day">Day</option>
+                                                <option value="Twilight">Twilight</option>
+                                                <option value="Night">Night</option>
+                                                <option value="Smoke">Smoke</option> 
+                                                <option value="Street Light">Street Light</option>
+                                            </select>
+                                        </div>
+                                   </div>
+                                   
+                                      <div class="col-md-3" >
+                                   <!-- select -->
+                                        <div class="form-group">
+                                            <label>WEATHER</label>
+                                            <select name="light" class="form-control">
+                                               <option value="Clear">Clear</option>
+                                                <option value="Cloudy">Cloudy</option>
+                                                <option value="Storm">Storm</option>
+                                                <option value="Fog">Fog</option> 
+                                            </select>
+                                        </div>
+                                   </div>
+                                   
+                                       <div class="col-md-3" >
+                                   <!-- select -->
+                                        <div class="form-group">
+                                            <label>ROAD CONTROL </label>
+                                            <select name="road_control" class="form-control">
+                                                <option value="Traffic Signal">Traffic Signal</option>
+                                                <option value="No Traffic Signal">No Traffic Signal</option>
+                                                <option value="Lane Marking">Lane Marking</option>
+                                                <option value="Speed Limit/Sign">Speed Limit/Sign</option> 
+                                            </select>
+                                        </div>
+                                   </div>
+                                     
 
  </div><!-- /.box-header -->                   
-                                        
-                             
+                       
 </div>
                                
-
+                            
+ <div class="pull-left" style="margin-left:20px; margin-top:20px;" >
+<button type="submit" class="btn btn-primary">Save and Next</button>
+</div>                                         
+      
 </div>
 
 </form>

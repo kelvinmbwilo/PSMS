@@ -70,17 +70,17 @@ Report Accident
                           </div>
                                       
                       
-                                          <!-- select -->
+                                               <!-- select -->
                                         <div class="form-group">
                                             <label>VIOLATIONS </label>
                                             <select name="acc_type" class="form-control">
-                                                <option value="single">Single vehicle accident</option>
-                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
-                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
-                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
-                                                <option value="50">Collision at a junction between two or more participants</option>
-                                                <option value="60" >Accident w. parked vehicles</option>
-                                                <option value="70">Pedestrian, animals and other accidents</option>
+                                                <option value="overspeed">Overspeed</option>
+                                                <option value="Overload">Overload</option>
+                                                <option value="Distance Keeping">Distance Keeping</option>
+                                                <option value="White Lane Cross.">White Lane Cross.</option>
+                                                <option value="Red Light">Red Light</option>
+                                                <option value="Overtaking" >Overtaking</option>
+                                                <option value="Zebra Crossing">Zebra Crossing</option>
                                         
                                             </select>
                                         </div>
@@ -89,13 +89,11 @@ Report Accident
                                         <div class="form-group">
                                             <label>VEHICLE DEFECTS</label>
                                             <select name="acc_type" class="form-control">
-                                                <option value="single">Single vehicle accident</option>
-                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
-                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
-                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
-                                                <option value="50">Collision at a junction between two or more participants</option>
-                                                <option value="60" >Accident w. parked vehicles</option>
-                                                <option value="70">Pedestrian, animals and other accidents</option>
+                                                <option value="Brakes">Brakes</option>
+                                                <option value="Bad Lights">Bad Lights</option>
+                                                <option value="Bad Tyre">Bad Tyre</option>
+                                                <option value="Tyre Burst">Tyre Burst</option>
+                                                <option value="Others">Others</option>
                                         
                                             </select>
                                         </div>
