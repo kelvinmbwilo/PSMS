@@ -175,7 +175,7 @@ public function forgotPassword($rankNo, $newpassword){
      */
     public function store_person($name1,$gender,$DOB,$physical_address,$address,$national_id_nationality,$phone_number,$drugs_alcohol_percent,$helmet_seat_belt_use,$casualty,$status,$vehicle_number,$accident_data_id ) {
 
-  $result = mysql_query("INSERT INTO psms_person(gender,DOB,physical_address,name,address,national_id_nationality,phone_number,drugs_alcohol_percent,helmet_seat_belt_use,casualty,status,vehicle_number,accident_data_id,created_at) VALUES
+  $result = mysql_query("INSERT INTO psms_person(gender,DOB,physical_address,name,address,nationality,phone_number,drugs_alcohol_percent,helmet_seat_belt_use,casualty,status,vehicle_number,accident_data_id,created_at) VALUES
         ('$gender','$DOB','$physical_address','$name1','$address','$national_id_nationality','$phone_number','$drugs_alcohol_percent','$helmet_seat_belt_use','$casualty','$status','$vehicle_number','$accident_data_id',NOW())");
 
         // check for successful store
@@ -308,11 +308,11 @@ public function storeVehicle($vehicle_type, $vehicle_reg)
 }
 
         
- public function storeDriver($surname, $other_names, $physical_address, $address_box, $national_id,$phone_no,$gender,$dob,$licence,$nationality,$occupation,$drugs,$alcohol,$phone_use)
+ public function storeDriver($surname, $other_names, $physical_address, $address_box, $national_id,$phone_no,$gender,$dob,$licence,$nationality,$occupation,$drugs,$alcohol,$phone_use,$seat_helmet)
     {
        
-         $result = mysql_query( "INSERT INTO psms_driver(surname,other_name,physical_address,address,national_id,phone_number,gender,DOB,nationality,driving_license,occupation,drugs,alcohol_percent,phone_use) 
-         VALUES('$surname','$other_names', '$physical_address','$address_box','$national_id','$phone_no','$gender', '$dob','$licence' ,'$nationality' ,'$occupation' ,'$drugs', '$alcohol', '$phone_use' )");         
+         $result = mysql_query( "INSERT INTO psms_driver(surname,other_name,physical_address,address,national_id,phone_number,gender,DOB,nationality,driving_license,occupation,drugs,alcohol_percent,phone_use,seat_belt_use) 
+         VALUES('$surname','$other_names', '$physical_address','$address_box','$national_id','$phone_no','$gender', '$dob','$licence' ,'$nationality' ,'$occupation' ,'$drugs', '$alcohol', '$phone_use' ,'$seat_helmet')");         
                    
         // check for successful driver
         if ($result) {

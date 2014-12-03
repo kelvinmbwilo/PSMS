@@ -329,7 +329,7 @@ else if ($tag == 'driver') {
     $seat_helmet = $_POST['seat_helmet'];
 
  // store driver
-    $driver = $db->storeDriver($surname, $other_names, $physical_address, $address_box, $national_id,$phone_no,$gender,$dob,$licence,$nationality,$occupation,$drugs,$alcohol,$phone_use);
+    $driver = $db->storeDriver($surname, $other_names, $physical_address, $address_box, $national_id,$phone_no,$gender,$dob,$licence,$nationality,$occupation,$drugs,$alcohol,$phone_use,$seat_helmet);
    
    
     if ($driver) {
@@ -349,7 +349,7 @@ else if ($tag == 'driver') {
         $response["driver"]["alcohol"] = $driver["alcohol_percent"];
         $response["driver"]["drugs"] = $driver["drugs"];
         $response["driver"]["phone_use"] = $driver["phone_use"];
-        //$response["driver"]["seat_helmet"] = $driver["helmet/seat_belt_use"];
+        $response["driver"]["seat_helmet"] = $driver["seat_belt_use"];
 
         echo json_encode($response);
     } else {

@@ -1,9 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: isaiah
- * Date: 10/2/14
- * Time: 12:56 PM
- */ ?>
-
- <div id="map-container" class="col-md-8"> </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+       
+    </head>
+    <body>
+   
+    </body>
+</html>

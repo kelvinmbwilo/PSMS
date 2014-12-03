@@ -32,12 +32,19 @@ Report Accident
 <div class="row">
 <!-- left column -->
 
+
+ <!-- form start -->
+<form action="{{url('send_accident')}}" method="post">
+
+
+<!-- Left Column -->
+
 <div class="col-md-6">
       
       <!-- general form elements -->
  <div class="form-group">
-<label for="exampleInputEmail1">Acc Register</label>
-<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Accident Registration Number">
+<label for="reg_number">Accident Registration Number</label>
+<input type="text" required="required" class="form-control" id="reg_number" placeholder="Accident Registration Number">
 </div>
 
  <div class="box-header">
@@ -46,326 +53,187 @@ Report Accident
 
  </div><!-- /.box-header -->
 
- <!-- form start -->
-<form role="form">
-                                    <div class="box-body">
-                                            <!-- Date mm/dd/yyyy -->
-                                    <div class="form-group">
+<div class="box-body">
+                               
+                          <!-- Date mm/dd/yyyy -->
+                            <div class="form-group">
                                       <label>Date :</label>
                                         <div class="input-group">
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask/>
+                                            <input name="acc_date" type="text"  required="required" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask/>
                                         </div><!-- /.input group -->
                                     </div>
-                                    <!-- /.form group -->
-                                    
                                       <!-- time Picker -->
                                     <div class="bootstrap-timepicker">
                                         <div class="form-group">
                                             <label>Time picker:</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control timepicker"/>
+                                                <input name="acc_time" required="required" type="text" class="form-control timepicker"/>
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-clock-o"></i>
                                                 </div>
                                             </div><!-- /.input group -->
                                         </div><!-- /.form group -->
                                     </div>
+                              
+                               
+                                 <div class="col-md-3">      
                                       
                                            <div class="form-group">
-                                            <label for="exampleInputEmail1">Area Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            <label for="area">Area Name</label>
+                                            <input name="area" required="required" type="text" class="form-control" id="exampleInputEmail1" placeholder="Area Name">
                                         </div>
+                                        
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">District</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            <label for="district">District</label>
+                                            <input name="district" required="required" type="text" class="form-control" id="exampleInputPassword1" placeholder="District">
                                         </div>
+                                        
                                            <div class="form-group">
-                                            <label for="exampleInputPassword1">City/Region</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                           <div class="form-group">
-                                            <label for="exampleInputEmail1">Road Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Road Number</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                            <div class="form-group">
-                                            <label for="exampleInputEmail1">Road Kilometer (mark) </label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Intersection Name</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                      
-                                           <div class="form-group">
-                                            <label for="exampleInputEmail1">Intersection Number</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Intersection Kilometer (mark)</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                         
-                                    </div><!-- /.box-body -->
-
-                                
-                                
-</div>
-
-
-  <!-- right column -->
- 
-
-<div class="col-md-6">
-
- <div class="box-header">
- <h4 class="box-title">VEHICLES</h4>
- <hr />
-
- </div><!-- /.box-header -->
-
- <!-- form start -->
-<form role="form">
-               <div class="box-body">
-                               <div class="vehicle" style="margin-bottom: 30px;">
-                               <button id="show" type="submit" class="btn btn-primary">Add Vehicle</button>
-                               <hr />
-                                </div>
-                          
-                          <div class="vehicle1">
-                          
-                          <h5 style="text-decoration: lightgreen; font-weight: bold; position: relative; left: 45%;">Vehicle One</h5>
-                          <hr />
-                           <div class="form-group">
-                           <label for="exampleInputEmail1">Vehicle Type</label>
-                           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                           </div>
-                           <div class="form-group">
-                            <label for="exampleInputPassword1">Registration Number</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            
-                          </div>
-                          
-
-                                
-                                
-                                
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script>
-$(document).ready(function(){
- 
-  $("#show").click(function(){
-    $("#vehicle2").show();
-  });
-});
-</script>      
-                           <div class="vehicle2" style="visibility: hidden;" >
-                           
-                           <h5 style="position: relative; left: 45%; font-weight: bold;  ">Vehicle Two</h5>
-                           <div class="form-group">
-                           <label for="exampleInputEmail1">Vehicle Type</label>
-                           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                           </div>
-                           <div class="form-group">
-                            <label for="exampleInputPassword1">Registration Number</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            
-                          </div>          
-                                           
-               </div><!-- /.box-body -->
-
-                                
-                                
-</div>
- 
-
- 
-</section><!-- /.content -->
-
-<hr />
-<section class="content-header" >
-<div class="row">
-<!-- left column -->
-      
-<h3 style="padding-left: 20px;">DRIVER DETAILS</h3>
-<div class="col-md-6">
-
-
- <div class="box-header">
- <div class="box-footer" style="left:important;">
-<button type="submit" class="btn btn-primary" ><a href="{{url('new_driver')}}">Add New Driver</a></button>
-</div>
- <hr />
-
- </div><!-- /.box-header -->
-
- <!-- form start -->
-<form role="form">
-                                    <div class="box-body">
-                                            <!-- Date mm/dd/yyyy -->
-                            
-                                      
-                                           <div class="form-group">
-                                            <label for="exampleInputEmail1">Surname</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Other Names</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                           <div class="form-group">
-                                            <label for="exampleInputPassword1">Physical Address</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                           <div class="form-group">
-                                            <label for="exampleInputEmail1">Address PO Box</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">National ID</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                            <div class="form-group">
-                                            <label for="exampleInputEmail1">Phone No </label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Gender</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                       <div class="form-group">
-                                      <label>Date of Birth</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
+                                            <label for="region">City/Region</label>
+                                            <input name="region" required="required" type="text" class="form-control" id="exampleInputPassword1" placeholder="Region/City">     
                                             </div>
-                                            <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask/>
-                                        </div><!-- /.input group -->
-                                    </div>
+                                            
+                          </div>                  
+                                                              
+                                          
+                                 
+                                         <!-- Inner Column-->
+                                                       
+                               <div class="col-md-3" style="width: inherit;">
+                              
+                              <div class="form-group">
+                                            <label for="road_name">Road Name</label>
+                                            <input name="road_name"required="required" type="text" class="form-control" id="exampleInputEmail1" placeholder=" Road Name">
+                                   
+                                        </div>
                                            <div class="form-group">
-                                            <label for="exampleInputEmail1">Nationality</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
+                                            <label for="road_no">Road Number</label>
+                                            <input  name="road_no" required="required" type="text" class="form-control" id="exampleInputPassword1" placeholder=" Road Number">
+                                            </div>
+                             
+                                       
+                                        
+                                            <div class="form-group">
+                                            <label for="road_mark">Road Kilometer (mark) </label>
+                                            <input name="road_mark" type="text" class="form-control" id="exampleInputEmail1" placeholder=" Road Kilometer (mark) ">
+                                            </div>
+                             
+                                </div>
+                                
+                                 <div class="col-md-3" style="width: auto;">
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Driving License ID</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            <label for="inter_name">Intersection Name</label>
+                                            <input name="inter_name" required="required" type="text" class="form-control" id="exampleInputPassword1" placeholder=" Intersection Name">
                                         </div>
-                                         
-                                          <div class="form-group">
-                                            <label for="exampleInputPassword1">Occupation</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                      
+                                           <div class="form-group">
+                                            <label for="inter_no">Intersection Number</label>
+                                            <input name="inter_no" required="required" type="text" class="form-control" id="exampleInputEmail1" placeholder=" Intersection Number">
                                         </div>
-                                         
-                                    </div><!-- /.box-body -->
+                                        
+                                        
+                                        <div class="form-group">
+                                            <label for="inter_mark">Intersection Kilometer (mark)</label>
+                                            <input name="inter_mark" required="required" type="text" class="form-control" id="exampleInputPassword1" placeholder=" Intersection Kilometer (mark) ">
+                                        </div>
+                                        
+                                 </div>
+                               
 
-                                
-                                
 </div>
 
-
-  <!-- right column -->
+</div>
+<div class="col-md-6" style="margin-top: 65px;">
  
-
-<div class="col-md-6">
-
  <div class="box-header">
- <h4 class="box-title">INSURANCE</h4>
+ <h4 class="box-title">ACCIDENT TYPE CLASSIFICATION</h4>
  <hr />
 
  </div><!-- /.box-header -->
 
- <!-- form start -->
-<form role="form">
+<div class="box-body">
+                     
+                                         <!-- select -->
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Insurance Company Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                            <label>ACCIDENT TYPE</label>
+                                            <select name="acc_type" class="form-control">
+                                                <option value="single">Single vehicle accident</option>
+                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
+                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
+                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
+                                                <option value="50">Collision at a junction between two or more participants</option>
+                                                <option value="60" >Accident w. parked vehicles</option>
+                                                <option value="70">Pedestrian, animals and other accidents</option>
+                                        
+                                            </select>
                                         </div>
                                         
+                            
+                                 <!-- select -->
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Type</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            <label>JUNCTION TYPE</label>
+                                            <select name="acc_type" class="form-control">
+                                                <option value="single">Single vehicle accident</option>
+                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
+                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
+                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
+                                                <option value="50">Collision at a junction between two or more participants</option>
+                                                <option value="60" >Accident w. parked vehicles</option>
+                                                <option value="70">Pedestrian, animals and other accidents</option>
+                                        
+                                            </select>
                                         </div>
                                         
+                                         <!-- select -->
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Phone Number</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            <label>ROAD TYPE</label>
+                                            <select name="acc_type" class="form-control">
+                                                <option value="single">Single vehicle accident</option>
+                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
+                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
+                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
+                                                <option value="50">Collision at a junction between two or more participants</option>
+                                                <option value="60" >Accident w. parked vehicles</option>
+                                                <option value="70">Pedestrian, animals and other accidents</option>
+                                        
+                                            </select>
                                         </div>
                                         
+                                         <!-- select -->
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Policy Number</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
+                                            <label>STREET CONDITION</label>
+                                            <select name="acc_type" class="form-control">
+                                                <option value="single">Single vehicle accident</option>
+                                                <option value="20">Accidents between vehicles driving same travel direction (2 or more vehicles)</option>
+                                                <option value="30">Accidents between vehicles driving opposite travel direction (2 or more vehicles)</option>
+                                                <option value="40">Accidents at a junction turning in same or opposite direction (2 or more vehicles)</option>
+                                                <option value="50">Collision at a junction between two or more participants</option>
+                                                <option value="60" >Accident w. parked vehicles</option>
+                                                <option value="70">Pedestrian, animals and other accidents</option>
                                         
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Policy Period</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            </select>
                                         </div>
+                            
+ <div class="pull-left" style="margin-left:5px; margin-top:20px;" >
+<button type="submit" class="btn btn-primary">Save and Next</button>
+</div>       
+
+ </div><!-- /.box-header -->                   
                                         
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Estimated repair costs </label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                      
+                             
+</div>
+                               
+
+</div>
+
 </form>
 
-
-</div>
- 
- 
- <div class="col-md-6" style="margin-top: 10px;">
-
- <div class="box-header">
- <h4 class="box-title">DAMAGE</h4>
- <hr />
-
- </div><!-- /.box-header -->
-
- <!-- form start -->
-<form role="form">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">vehicle</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Vehicle Total</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Phone Number</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Infrastructure</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                        </div>
-                                        
-                                        
-                                      
-</form>
-
-
 </div>
 
- <div class="pull-left" style="margin-left: 30px; margin-right: 30px;" >
- <button type="submit" class="btn btn-primary"><a href="{{url('passenger')}}">Save and Next </a></button>
-</div>
-
- <div class="pull-rught" style="margin-left: 30px;">
-<button type="submit" class="btn btn-primary"><a href="{{url('accident')}}">Cancel </a></button>
-</div>
-</div>
 
 </section><!-- /.content -->
-
                   
     @stop

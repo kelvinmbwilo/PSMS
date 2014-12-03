@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('new_map' , function(){
+    
+    return View::make('accident.new');
+});
+
 Route::get('/', function()
 {
 	return View::make('dashboard');
@@ -32,16 +37,13 @@ Route::get('map', function()
     return View::make('map');
 });
 
-Route::get('passenger', 'ReportController@passenger');
-
-Route::get('new_driver', 'ReportController@new_driver');
 
 Route::get('recently', function()
 {
     return View::make('recently');
 });
 
-Route::get('accident' ,'ReportController@index');
+Route::get('accident' ,'AccidentController@index');
     
 
 Route::resource('dashboard' , 'DashboardController');
@@ -154,3 +156,14 @@ Route::get('lisence', array('uses' => 'LisenceController@index'));
 Route::get('license/data/{id}', array('uses' => 'LisenceController@licenseSpecificData'));
 
 
+
+Route::get('passenger', 'AccidentController@acc_pass');
+Route::get('vehicle_one', 'AccidentController@vehicle_one');
+Route::get('vehicle_two', 'AccidentController@vehicle_two');
+
+
+
+Route::post('send_accident' ,array('uses' => 'AccidentController@accident_details'));
+Route::post('send_one' ,array('uses' => 'AccidentController@vehicle_one_details'));
+Route::post('send_two' ,array('uses' => 'AccidentController@vehicle_two_details'));
+Route::post('send_pass' ,array('uses' => 'AccidentController@send_person'));
